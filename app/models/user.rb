@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   validates :name, :presence => true
-  validates :cpf, :presence => true
-  validates :cep, :presence => true
+  validates :cpf, :presence => true, :uniqueness => true
+  validates :cep, :presence => true, :format => { :with => /^[0-9]{5}-[0-9]{3}$/ }
+  
+  validates_with CpfValidator
 end
