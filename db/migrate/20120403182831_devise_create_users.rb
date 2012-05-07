@@ -39,6 +39,13 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :cpf
       t.string :cep
+	  
+	  #Criado por Heitor
+	  t.float :latitude
+	  t.float :longitude
+	  t.string :average_rating
+	  t.integer :votes
+	  t.integer :accumulated
       
       t.timestamps
     end

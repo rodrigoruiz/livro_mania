@@ -11,7 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120403182831) do
+ActiveRecord::Schema.define(:version => 20120412130421) do
+
+  create_table "books", :force => true do |t|
+    t.string   "isbn"
+    t.string   "title"
+    t.string   "author"
+    t.integer  "edition"
+    t.string   "language"
+    t.integer  "pages"
+    t.string   "publisher"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "books_users", :id => false, :force => true do |t|
+    t.integer "book_id"
+    t.integer "user_id"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.string   "body"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "my_books", :force => true do |t|
+    t.integer  "book_id"
+    t.integer  "owner_id"
+    t.float    "height"
+    t.float    "width"
+    t.float    "weight"
+    t.string   "additional_information"
+    t.string   "photos"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -27,6 +64,11 @@ ActiveRecord::Schema.define(:version => 20120403182831) do
     t.string   "name"
     t.string   "cpf"
     t.string   "cep"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "average_rating"
+    t.integer  "votes"
+    t.integer  "accumulated"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
