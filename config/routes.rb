@@ -3,6 +3,8 @@ LivroMania::Application.routes.draw do
 
   root :to => 'pages#index'
   
+  get '/messages', :to => 'messages#messages'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

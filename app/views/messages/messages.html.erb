@@ -1,0 +1,14 @@
+<% @messages.each do |other_person, messages| %>
+  <b><%= other_person.name %></b><br/>
+  <% messages.each do |message| %>
+    <%= message.sender.name %>: <%= message.body %><br/>
+  <% end %>
+  
+  <%= form_for(@message) do |f| %>
+    <div><%= f.text_area :body %></div>
+    <div><%= f.text_field :sender_id, :value => current_user.id %></div>
+    <div><%= f.submit "Send" %></div>
+  <% end %>
+  
+  <hr/>
+<% end %>

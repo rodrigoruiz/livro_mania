@@ -39,17 +39,17 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :cpf
       t.string :cep
-	  
-	  #Criado por Heitor
-	  t.float :latitude
-	  t.float :longitude
-	  t.string :average_rating
-	  t.integer :votes
-	  t.integer :accumulated
+	    
+  	  #Criado por Heitor
+  	  t.float :latitude
+  	  t.float :longitude
+  	  t.string :average_rating
+  	  t.integer :votes
+  	  t.integer :accumulated
       
       t.timestamps
     end
-
+    
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
