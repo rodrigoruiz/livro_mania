@@ -32,7 +32,7 @@ body {
 }
 #mainnav ul {
 	border-left: 1px solid #C4C769;
-	display: inline;
+	display: inline;	
 }
 #mainnav li {
 	display: inline;
@@ -59,7 +59,8 @@ body {
 	text-align: center;
 	text-decoration: none;
 	color: #008B8B;
-	background=FFFFFF;
+	background: #FFFFFF;
+	
 }
 #botao-editar{
 	font-weight: bold;
@@ -71,7 +72,7 @@ body {
 	height: 30px;
 }
 #botao-buscar{
-	background: url('/assets/images/botao_busca.png');
+	background: url('/assets/botao_busca.png');
 	width: 27px;
 	height: 27px;
 }
