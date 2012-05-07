@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20120412130421) do
 
   create_table "my_books", :force => true do |t|
     t.integer  "book_id"
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.float    "height"
     t.float    "width"
     t.float    "weight"

@@ -30,6 +30,9 @@ body {
 	text-align: right;
 	height: 70px;
 }
+#mainnav form {
+  display: inline;
+}
 #mainnav ul {
 	border-left: 1px solid #C4C769;
 	display: inline;	
