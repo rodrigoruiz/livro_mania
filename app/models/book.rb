@@ -3,5 +3,6 @@ class Book < ActiveRecord::Base
   
   #criado por Heitor
   attr_accessible :author, :cpf, :edition, :isbn, :language, :pages, :publisher, :title
+  has_many :my_books, :class_name => 'MyBook'
   has_and_belongs_to_many :users
 end
