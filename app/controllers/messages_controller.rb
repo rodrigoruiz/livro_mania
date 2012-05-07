@@ -16,4 +16,9 @@ class MessagesController < ApplicationController
     
     @message = Message.new
   end
+  
+  def respond_message
+    Message.create(params[:message]).inspect
+    redirect_to messages_path
+  end
 end
