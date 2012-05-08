@@ -13,7 +13,8 @@
 */
 
 body {
-  background: #C4C769;
+  background: #E0EEE0;
+  text-align: center;
 }
 #busca {
 	background: #008B8B;
@@ -25,7 +26,7 @@ body {
 	height: 70px;
 }
 #mainnav {
-	background: #008B8B;
+	background: #006400;
 	color: #272900;
 	text-align: right;
 	height: 70px;
@@ -34,8 +35,7 @@ body {
   display: inline;
 }
 #mainnav ul {
-	border-left: 1px solid #C4C769;
-	display: inline;
+	display: inline;	
 }
 #mainnav li {
 	display: inline;
@@ -57,21 +57,21 @@ body {
 	border-width: 4px;
 	border-style: ridge;
 	border-color: #5F9EA0;
-	margin: 0 0 0 100px;
+	margin: 0 0 0 140px;
 	display: inline;
 	text-align: center;
 	text-decoration: none;
 	color: #008B8B;
-	background=FFFFFF;
+	background: #FFFFFF;
 }
 #botao-editar{
 	font-weight: bold;
 	color: #FFFFFF;
 	text-decoration: none;
-	display: block;
 	background:#5F9EA0;
 	width: 50px;
-	height: 30px;
+	height: 25px;
+	margin: 20px;
 }
 #botao-buscar{
 	background: url('/assets/botao_busca.png');
@@ -79,17 +79,16 @@ body {
 	height: 27px;
 }
 #trocas{
-	text-align: center;
-	width: 985px;
+	text-align: center;	
 }
 #botao-trocas{
 	font-weight: bold;
 	color: #FFFFFF;
 	text-decoration: none;
-	display: block;
 	background:#5F9EA0;
 	width: 300px;
-	height: 30px;
+	height: 25px;
+	margin-top: 20px;
 }
 .clear {
   clear: both;
