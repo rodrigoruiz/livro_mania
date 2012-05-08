@@ -13,82 +13,94 @@
 */
 
 body {
-  background: #E0EEE0;
   text-align: center;
-}
-#busca {
-	background: #008B8B;
-	color: #272900;
-	padding: 2px 0;
-	float: left;
-	text-align: right;
-	width: 605px;
-	height: 70px;
+  background: #E0EEE0;
 }
 #mainnav {
-	background: #006400;
-	color: #272900;
+	/*background: #008b8b;*/
+	background: -webkit-linear-gradient(top, #E82C2C 0%, #DE2627 25%, #CE1F21 50%, #C31A1D 75%, #B41317 100%);
 	text-align: right;
 	height: 70px;
+	border-radius: 15px;
+	padding-right: 50px;
+}
+#search {
+  font-size: 18px;
 }
 #mainnav form {
   display: inline;
 }
 #mainnav ul {
-	display: inline;	
+  margin-left: -30px;
+	display: inline;
 }
-#mainnav li {
+#mainnav ul li {
 	display: inline;
 	padding: 0 10px;
-	border-right: 1px solid #C4C769;
 }
-#mainnav li a {
-	text-decoration: none;
-	color: #272900;
+#mainnav ul li.not_last {
+	border-right: 1px solid rgba(0, 0, 0, 0.9);
 }
-#mainnav li a:hover {
+
+#mainnav ul li a {
 	text-decoration: none;
-	color: #fff;
-	background-color: #5F9EA0;
+	color: #FFFFFF;
+}
+#mainnav ul li a:hover {
+	color: #FFFFFF;
+	background-color: #FE4F51;
+}
+#books_list {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
 }
 .books {
-	float: left;
 	width: 340px;
 	border-width: 4px;
 	border-style: ridge;
-	border-color: #5F9EA0;
-	margin: 0 0 0 140px;
-	display: inline;
+	border-color: #C31A1D;
 	text-align: center;
 	text-decoration: none;
-	color: #008B8B;
+	color: #C31A1D;
 	background: #FFFFFF;
 }
-#botao-editar{
+.books.my_books {
+  float: left;
+}
+.books.desired_books {
+  float: right;
+}
+.botao-editar{
 	font-weight: bold;
 	color: #FFFFFF;
 	text-decoration: none;
-	background:#5F9EA0;
-	width: 50px;
+	background: #C31A1D;
+	width: 100px;
 	height: 25px;
-	margin: 20px;
+	margin: 10px;
 }
-#botao-buscar{
+#search_button{
 	background: url('/assets/botao_busca.png');
 	width: 27px;
 	height: 27px;
-}
-#trocas{
-	text-align: center;	
 }
 #botao-trocas{
 	font-weight: bold;
 	color: #FFFFFF;
 	text-decoration: none;
-	background:#5F9EA0;
+	background: #C31A1D;
 	width: 300px;
 	height: 25px;
 	margin-top: 20px;
+}
+.remove_button {
+  width: 20px;
+  margin-left: 10px;
+}
+.remove_link {
+  
 }
 .clear {
   clear: both;

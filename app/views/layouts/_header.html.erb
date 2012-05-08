@@ -2,13 +2,13 @@
   <div id="mainnav">
 		<br/>
 		<form>
-		  <input type="text" name='busca' placeholder='Buscar livro'/>
-			<input type="submit"  id="botao-buscar" value="" name="buscar"/>
+		  <input id='search' type="text" name='busca' placeholder='Buscar livro'/>
+			<input id="search_button" type="submit" value="" name="buscar"/>
 		</form>
 		<ul>
-		  <li><%= link_to 'Home', root_path %></li>
-			<li><%= link_to 'Mensagens', messages_path %></li>
-			<li><%= link_to 'Editar conta', edit_user_registration_path %></li>
+		  <li class='not_last'><%= link_to 'Home', root_path %></li>
+			<li class='not_last'><%= link_to 'Mensagens', messages_path %></li>
+			<li class='not_last'><%= link_to 'Editar conta', edit_user_registration_path %></li>
 			<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
 		</ul>
 	</div>

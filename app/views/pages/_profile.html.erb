@@ -1,31 +1,29 @@
-<div>
-  <div class="books">
+<div id='books_list'>
+  <div class="books my_books">
   	<h3>Meus livros</h3>
   	<% @my_books.each do |my_book| %>
-  	  <%= my_book.book.title %> <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete %><br/>
+  	  <%= my_book.book.title %> <%= link_to image_tag('/assets/remove_button.png', :class => 'remove_button'), "/remove_my_book/#{my_book.id}", { :class => 'remove_link' }, { :method => :delete } %><br/>
   	<% end %>
-	
+	  <br/>
   	<%= form_for(@book, :url => 'add_my_book') do |f| %>
   	  <div><%= f.text_field :title %></div>
-      
-  	  <div><%= f.submit "Adicionar livro" %></div>
+  	  <div><%= f.submit "Adicionar livro", :class => 'botao-editar' %></div>
   	<% end %>
   </div>
-  <div class="books">
+  <div class="books desired_books">
   	<h3>Livros que desejo</h3>
   	<% @desired_books.each do |book| %>
-  	  <%= book.title %> <%= link_to 'Remover', "/remove_desired_book/#{book.id}", :method => :delete %><br/>
+  	  <%= book.title %> <%= link_to image_tag('/assets/remove_button.png', :class => 'remove_button'), "/remove_desired_book/#{book.id}", { :method => :delete } %><br/>
   	<% end %>
-	
+	  <br/>
   	<%= form_for(@book, :url => '/add_desired_book') do |f| %>
   	  <div><%= f.text_field :title %></div>
-  	  
-  	  <div><%= f.submit "Adicionar livro" %></div>
+  	  <div><%= f.submit "Adicionar livro", :class => 'botao-editar' %></div>
   	<% end %>
   </div>
 </div>
 <div class='clear'></div>
-<div id="trocas">
+<div>
 	<form>
 		<input id="botao-trocas" type="submit"  value="Maximizar trocas" name="maximizar"/>
 	</form>
