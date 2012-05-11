@@ -1,9 +1,7 @@
 class MyBook < ActiveRecord::Base
-<<<<<<< HEAD
-  # attr_accessible :title, :body
-
-  attr_accessible :user_id, :book_id
+  validates :user_id, :presence => true
+  validates :book_id, :presence => true
   
   belongs_to :book, :class_name => 'Book'
-  belongs_to :owner, :class_name => 'User'
+  belongs_to :owner, :class_name => 'User', :foreign_key => 'user_id'
 end

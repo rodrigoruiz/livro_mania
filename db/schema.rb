@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20120412130421) do
     t.string   "name"
     t.string   "cpf"
     t.string   "cep"
+    t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "average_rating"

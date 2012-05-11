@@ -8,7 +8,7 @@
     <div><%= f.text_area :body %></div>
     <div><%= f.text_field :sender_id, :value => current_user.id, :hidden => true %></div>
     <div><%= f.text_field :receiver_id, :value => other_person.id, :hidden => true %></div>
-    <div><%= f.submit "Send" %></div>
+    <div><%= f.submit "Enviar" %></div>
   <% end %>
   
   <hr/>
