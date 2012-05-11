@@ -1,15 +1,15 @@
 <% @messages.each do |other_person, messages| %>
-  <b><%= other_person.name %></b><br/>
-  <% messages.each do |message| %>
-    <%= message.sender.name %>: <%= message.body %><br/>
-  <% end %>
-  
-  <%= form_for(@message) do |f| %>
-    <div><%= f.text_area :body %></div>
-    <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
-    <div><%= f.hidden_field :receiver_id, :value => other_person.id %></div>
-    <div><%= f.submit "Enviar" %></div>
-  <% end %>
-  
-  <hr/>
+  <div class='span4'>
+    <h3><%= other_person.name %></h3><br/>
+    <% messages.each do |message| %>
+      <b><%= message.sender.name %>:</b> <%= message.body %><br/>
+    <% end %>
+    
+    <%= form_for(@message) do |f| %>
+      <div><%= f.text_area :body, :rows => '3' %></div>
+      <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
+      <div><%= f.hidden_field :receiver_id, :value => other_person.id %></div>
+      <div><%= f.submit "Enviar", :class => 'btn btn-primary' %></div>
+    <% end %>
+  </div>
 <% end %>

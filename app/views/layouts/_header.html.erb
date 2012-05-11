@@ -7,15 +7,15 @@
   
   <%= link_to 'Livro Mania', '#', :class => 'brand' %>
   
-  <div class='nav-collapse'>
+  <div class='nav-collapse pull-right'>
     <form class='navbar-search'>
 		  <input id='search' type="text" class='search-query' name='busca' placeholder='Buscar livro'/>
 		</form>
 		
 		<ul class='nav'>
-  	  <li><%= link_to 'Home', root_path %></li>
-  		<li><%= link_to 'Mensagens', messages_path %></li>
-  		<li><%= link_to 'Editar conta', edit_user_registration_path %></li>
+  	  <li class='<%= 'active' if request.fullpath == root_path %>'><%= link_to 'Home', root_path %></li>
+  		<li class='<%= 'active' if request.fullpath == messages_path %>'><%= link_to 'Mensagens', messages_path %></li>
+  		<li class='<%= 'active' if request.fullpath == edit_user_registration_path %>'><%= link_to 'Editar conta', edit_user_registration_path %></li>
   		<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
 		</ul>
 	</div>
