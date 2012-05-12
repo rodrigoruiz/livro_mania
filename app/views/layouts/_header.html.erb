@@ -1,18 +1,25 @@
 <% if user_signed_in? %>
-  <div id="mainnav">
-		<br/>
-		<form>
-		  <input id='search' type="text" name='busca' placeholder='Buscar livro'/>
-			<input id="search_button" type="submit" value="" name="buscar"/>
+  <a class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>
+    <span class='icon-bar'></span>
+    <span class='icon-bar'></span>
+    <span class='icon-bar'></span>
+  </a>
+  
+  <%= link_to 'Livro Mania', '#', :class => 'brand' %>
+  
+  <div class='nav-collapse pull-right'>
+    <form class='navbar-search'>
+		  <input id='search' type="text" class='search-query' name='busca' placeholder='Buscar livro'/>
 		</form>
-		<ul>
-		  <li class='not_last'><%= link_to 'Home', root_path %></li>
-			<li class='not_last'><%= link_to 'Mensagens', messages_path %></li>
-			<li class='not_last'><%= link_to 'Editar conta', edit_user_registration_path %></li>
-			<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+		
+		<ul class='nav'>
+  	  <li class='<%= 'active' if request.fullpath == root_path %>'><%= link_to 'Home', root_path %></li>
+  		<li class='<%= 'active' if request.fullpath == messages_path %>'><%= link_to 'Mensagens', messages_path %></li>
+  		<li class='<%= 'active' if request.fullpath == edit_user_registration_path %>'><%= link_to 'Editar conta', edit_user_registration_path %></li>
+  		<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
 		</ul>
 	</div>
 <% else %>
-  <%= link_to 'Sign up', new_user_registration_path %> or
-  <%= link_to 'Sign in', new_user_session_path %><br/>
+  <%= link_to 'Sign up', new_user_registration_path, :class => 'btn btn-primary' %>
+  <%= link_to 'Sign in', new_user_session_path, :class => 'btn' %>
 <% end %>

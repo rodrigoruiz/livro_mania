@@ -42,3 +42,6 @@ gem 'devise'
 gem 'geocoder'
 
 gem 'hpricot'
+
+gem "twitter-bootstrap-rails"
+

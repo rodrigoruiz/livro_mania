@@ -1,30 +1,41 @@
-<div id='books_list'>
-  <div class="books my_books">
+<div class='row'>
+  <div class='span2 offset3'>
   	<h3>Meus livros</h3>
   	<% @my_books.each do |my_book| %>
-  	  <%= my_book.book.title %> <%= link_to image_tag('/assets/remove_button.png', :class => 'remove_button'), "/remove_my_book/#{my_book.id}", { :class => 'remove_link' }, { :method => :delete } %><br/>
+  	  <%= my_book.book.title %>
+  	  <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
+  	  <br/>
   	<% end %>
+  	
 	  <br/>
+	  
   	<%= form_for(@book, :url => 'add_my_book') do |f| %>
-  	  <div><%= f.text_field :title %></div>
-  	  <div><%= f.submit "Adicionar livro", :class => 'botao-editar' %></div>
+  	  <div><%= f.text_field :title, :class => 'span2' %></div>
+  	  <div><%= f.submit "Adicionar livro", :class => 'btn btn-primary' %></div>
   	<% end %>
   </div>
-  <div class="books desired_books">
+  
+  <div class='span2 offset2'>
   	<h3>Livros que desejo</h3>
   	<% @desired_books.each do |book| %>
-  	  <%= book.title %> <%= link_to image_tag('/assets/remove_button.png', :class => 'remove_button'), "/remove_desired_book/#{book.id}", { :method => :delete } %><br/>
+  	  <%= book.title %>
+  	  <%= link_to 'Remover', "/remove_desired_book/#{book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
+  	  <br/><br/>
   	<% end %>
 	  <br/>
   	<%= form_for(@book, :url => '/add_desired_book') do |f| %>
-  	  <div><%= f.text_field :title %></div>
-  	  <div><%= f.submit "Adicionar livro", :class => 'botao-editar' %></div>
+  	  <div><%= f.text_field :title, :class => 'span2' %></div>
+  	  <div><%= f.submit "Adicionar livro", :class => 'btn btn-primary' %></div>
   	<% end %>
   </div>
 </div>
-<div class='clear'></div>
-<div>
-	<form>
-		<input id="botao-trocas" type="submit"  value="Maximizar trocas" name="maximizar"/>
-	</form>
+
+<br/>
+
+<div class='row'>
+  <div class='offset4'>
+  	<form>
+  		<input id="botao-trocas" class='btn span4' type="submit"  value="Maximizar trocas" name="maximizar"/>
+  	</form>
+  </div>
 </div>

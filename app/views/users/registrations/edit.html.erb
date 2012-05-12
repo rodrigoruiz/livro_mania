@@ -1,34 +1,50 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<div style='text-align:center;' class='span4 offset4'>
+  <h2>Editar minha conta</h2>
   
-  <div><%= f.label :name %><br/>
-  <%= f.text_field :name %></div>
+  <br/>
   
-  <div><%= f.label :cpf %><br/>
-  <%= f.text_field :cpf %></div>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
+    <%= devise_error_messages! %>
+    
+    <div class='control-group'>
+      <%= f.label :name, :class => 'control-label' %>
+      <div class='controls'><%= f.text_field :name %></div>
+    </div>
+    
+    <div class='control-group'>
+      <%= f.label :cpf, :class => 'control-label' %>
+      <div class='controls'><%= f.text_field :cpf %></div>
+    </div>
+    
+    <div class='control-group'>
+      <%= f.label :cep, :class => 'control-label' %>
+      <div class='controls'><%= f.text_field :cep %></div>
+    </div>
+    
+    <div class='control-group'>
+      <%= f.label :email, :class => 'control-label' %>
+      <div class='controls'><%= f.email_field :email %></div>
+    </div>
+    
+    <div class='control-group'>
+      <%= f.label 'Nova senha', :class => 'control-label' %>
+      <div class='controls'><%= f.password_field :password, :autocomplete => "off", :placeholder => '**************' %></div>
+    </div>
+    
+    <div class='control-group'>
+      <%= f.label 'Confirmar nova senha', :class => 'control-label' %>
+      <div class='controls'><%= f.password_field :password_confirmation, :placeholder => '**************' %></div>
+    </div>
+    
+    <div class='control-group'>
+      <%= f.label 'Senha atual', :class => 'control-label' %>
+      <div class='controls'><%= f.password_field :current_password, :placeholder => 'digite sua senha atual' %></div>
+    </div>
+    
+    <div><%= f.submit "Atualizar", :class => 'btn btn-primary' %></div>
+  <% end %>
   
-  <div><%= f.label :cep %><br/>
-  <%= f.text_field :cep %></div>
+  <h3>Cancelar minha conta</h3>
   
-  <div><%= f.label :email %><br/>
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Update" %></div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-<%#= link_to "Back", :back %>
+  <p>Infeliz? <%= link_to "Cancelar minha conta", registration_path(resource_name), :confirm => "Você tem certeza?", :method => :delete %>.</p>
+</div>

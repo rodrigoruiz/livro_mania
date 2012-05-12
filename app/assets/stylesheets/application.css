@@ -11,13 +11,12 @@
  *= require_self
  *= require_tree .
 */
-
+/*
 body {
   text-align: center;
   background: #E0EEE0;
 }
 #mainnav {
-	/*background: #008b8b;*/
 	background: -webkit-linear-gradient(top, #E82C2C 0%, #DE2627 25%, #CE1F21 50%, #C31A1D 75%, #B41317 100%);
 	text-align: right;
 	height: 70px;
@@ -105,3 +104,4 @@ body {
 .clear {
   clear: both;
 }
+*/
