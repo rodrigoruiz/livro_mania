@@ -12,7 +12,7 @@ LivroMania::Application.routes.draw do
   get '/messages', :to => 'messages#messages'
   post '/messages', :to => 'messages#respond_message'
 
-  get '/fiil_address', :to => 'applications#fill_address'
+  #get '/fill_address', :to => 'applications#fill_address'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
