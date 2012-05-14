@@ -45,3 +45,5 @@ gem 'hpricot'
 
 gem "twitter-bootstrap-rails"
 
+gem "therubyracer", :require => 'v8'
+
