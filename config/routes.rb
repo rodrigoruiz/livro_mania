@@ -12,6 +12,8 @@ LivroMania::Application.routes.draw do
   get '/messages', :to => 'messages#messages'
   post '/messages', :to => 'messages#respond_message'
   
+  get '/user_profile/:id', :to => 'pages#user_profile'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

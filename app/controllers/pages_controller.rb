@@ -38,4 +38,9 @@ class PagesController < ApplicationController
     
     redirect_to root_path
   end
+  def user_profile
+    @user = User.find(params[:id])
+    @my_books = @user.my_books.sort_by { |my_book| my_book.book.title }
+    @desired_books = @user.books.sort_by { |book| book.title }
+  end
 end
