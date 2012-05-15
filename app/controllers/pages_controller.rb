@@ -1,21 +1,25 @@
 class PagesController < ApplicationController
   def index
     if current_user
-      @my_books = current_user.my_books.sort_by { |my_book| my_book.book.title }
+      @my_books = current_user.my_books.sort_by { |my_book| my_book.title }
       @desired_books = current_user.books.sort_by { |book| book.title }
     end
     
     @book = Book.new
   end
   
-  def add_my_book
-    book = Book.where(:title => params[:book][:title]).first
-    if book
-      my_book = MyBook.new
-      my_book.book = book
-      my_book.owner = current_user
-      my_book.save
-    end
+  def new_my_book
+    @my_book = MyBook.new
+    @my_book.book = Book.new
+  end
+  
+  def create_my_book
+    title = params[:my_book][:title]
+    params[:my_book].delete(:title)
+    my_book = MyBook.new(params[:my_book])
+    my_book.book = Book.find_by_title(title)
+    my_book.owner = current_user
+    my_book.save
     
     redirect_to root_path
   end
