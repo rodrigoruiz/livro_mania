@@ -1,1 +1,21 @@
-<%=@i%>
+<h2><%=@user.name%></h2>
+<h3>Livros disponibilizados para troca</h3>
+<% @my_books.each do |my_book| %>
+  	  Livro: <%= my_book.title %>
+  	  Peso: <%= my_book.weight %>
+  	  Informações adicionais: <%= my_book.additional_information %>
+  	  Imagem: <%= image_tag my_book.photo.url(:thumb) %>
+   	  <br/>
+<% end %>
+
+<h3>Livros desejados</h3>
+<% @desired_books.each do |book| %>
+  	  <%= book.title %>
+  	  <br/>
+<% end %>
+<%= form_for(@message) do |f| %>
+      <div><%= f.text_area :body, :rows => '3' %></div>
+      <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
+      <div><%= f.hidden_field :receiver_id, :value => @user.id %></div>
+      <div><%= f.submit "Enviar", :class => 'btn btn-primary' %></div>
+<% end %>

@@ -42,5 +42,6 @@ class PagesController < ApplicationController
     @user = User.find(params[:id])
     @my_books = @user.my_books.sort_by { |my_book| my_book.book.title }
     @desired_books = @user.books.sort_by { |book| book.title }
+    @message = Message.new
   end
 end
