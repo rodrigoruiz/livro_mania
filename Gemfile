@@ -37,13 +37,8 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'devise'
-
 gem 'geocoder'
 
 gem 'hpricot'
 
-gem "twitter-bootstrap-rails"
-
-gem "therubyracer", :require => 'v8'
-
+gem 'devise', '2.0.4'
