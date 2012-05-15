@@ -2,17 +2,14 @@
   <div class='span2 offset3'>
   	<h3>Meus livros</h3>
   	<% @my_books.each do |my_book| %>
-  	  <%= my_book.book.title %>
+  	  <%= my_book.title %>
   	  <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
   	  <br/>
   	<% end %>
   	
 	  <br/>
 	  
-  	<%= form_for(@book, :url => 'add_my_book') do |f| %>
-  	  <div><%= f.text_field :title, :class => 'span2' %></div>
-  	  <div><%= f.submit "Adicionar livro", :class => 'btn btn-primary' %></div>
-  	<% end %>
+	  <%= link_to 'Adicionar livro', new_my_book_path %>
   </div>
   
   <div class='span2 offset2'>
