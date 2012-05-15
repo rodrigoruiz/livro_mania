@@ -37,5 +37,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'devise'
-gem "twitter-bootstrap-rails"
+gem 'devise', '2.0.4'
