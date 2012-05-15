@@ -1,6 +1,7 @@
 class CpfValidator < ActiveModel::Validator
   def validate(record)
     cpf_array = record.cpf.gsub('.', '').split('-')
+    cpf_array[1] ||= ''
     last_digits = cpf_array[1].split('')
     first_digit, second_digit = verification_digits(cpf_array[0])
     
@@ -13,6 +14,8 @@ class CpfValidator < ActiveModel::Validator
   
   private
     def verification_digits(first_part_of_cpf)
+      first_part_of_cpf ||= ''
+      
       first_digit = verification_digit(first_part_of_cpf)
       second_digit = verification_digit(first_part_of_cpf + first_digit)
       
@@ -20,8 +23,8 @@ class CpfValidator < ActiveModel::Validator
     end
     
     def verification_digit(string)
-      puts '***********'
       total = 0
+      string ||= ''
       string.split('').each_with_index do |number, index|
         total += number.to_i * (string.size + 1 - index)
       end
