@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
       endereco.gsub!('\u00f5', "õ")
       endereco.gsub!('\u00fa', "ú")
   end
-
+  
   geocoded_by :address
   after_validation :geocode
   
