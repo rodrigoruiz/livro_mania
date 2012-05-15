@@ -1,6 +1,6 @@
 <% @messages.each do |other_person, messages| %>
   <div class='span4'>
-    <h3><%= other_person.name %></h3><br/>
+    <h3><%= link_to other_person.name, "/user_profile/#{other_person.id}" %></h3><br/>
     <% messages.each do |message| %>
       <b><%= message.sender.name %>:</b> <%= message.body %><br/>
     <% end %>

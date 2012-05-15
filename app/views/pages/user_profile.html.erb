@@ -7,12 +7,14 @@
   	  Imagem: <%= image_tag my_book.photo.url(:thumb) %>
    	  <br/>
 <% end %>
-
+<br />
 <h3>Livros desejados</h3>
 <% @desired_books.each do |book| %>
   	  <%= book.title %>
   	  <br/>
 <% end %>
+<br />
+<h3>Mensagem:</h3>
 <%= form_for(@message) do |f| %>
       <div><%= f.text_area :body, :rows => '3' %></div>
       <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
