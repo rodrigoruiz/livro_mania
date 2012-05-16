@@ -42,3 +42,4 @@ gem 'geocoder'
 gem 'hpricot'
 
 gem 'devise', '2.0.4'
+gem 'paperclip'
