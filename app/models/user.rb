@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
 
   before_validation :fill_address
 
+public
+  def sort_by_distance (user, users)
+    users.sort_by{|a| user.distance_to(a)}
+  end
+
   private
     def fill_address
       url = "http://feliperoberto.com.br/api/correios/cep.php?cep="+self.cep
@@ -27,9 +32,11 @@ class User < ActiveRecord::Base
         
       list[3] = street_list[0]
       
-      #list[3] = correct(list[3])
-      #list[15] = correct(list[15])
+      correct(list[3])
+      correct(list[15])
+
       self.address = list[3]+","+list[7]+","+list[15]+","+list[19]
+
     end
 
   def correct(endereco)      
@@ -55,7 +62,9 @@ class User < ActiveRecord::Base
       endereco.gsub!('\u00f5', "õ")
       endereco.gsub!('\u00fa', "ú")
   end
+
   
+
   geocoded_by :address
   after_validation :geocode
   
