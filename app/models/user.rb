@@ -33,7 +33,9 @@ public
       list[3] = street_list[0]
       
       correct(list[3])
+      correct(list[7])
       correct(list[15])
+      correct(list[19])
 
       self.address = list[3]+","+list[7]+","+list[15]+","+list[19]
 
