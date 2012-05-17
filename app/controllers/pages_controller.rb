@@ -48,4 +48,5 @@ class PagesController < ApplicationController
     @desired_books = @user.books.sort_by { |book| book.title }
     @message = Message.new
   end
+  
 end

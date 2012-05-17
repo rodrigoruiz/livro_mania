@@ -3,6 +3,8 @@ LivroMania::Application.routes.draw do
 
   root :to => 'pages#index'
   
+  post '/find', :to => 'my_books#find'
+
   get '/new_my_book', :to => 'pages#new_my_book'
   post '/create_my_book', :to => 'pages#create_my_book'
   delete '/remove_my_book/:id', :to => 'pages#remove_my_book'

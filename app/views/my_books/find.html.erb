@@ -1,0 +1,20 @@
+<h1>Buscando no my_books por (<%= params[:search_string] %>) </h1>
+
+<table>
+  <tr>
+    <th>Titulo do Livro</th>
+    <th> / Dono do livro</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @my_books.each do |my_book| %>
+  <tr>
+    <td><%= my_book.book.title %></td>
+    <td><%= my_book.owner.name %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
