@@ -27,14 +27,16 @@ Message.create(:body => 'Muito bem, e você?', :sender_id => 2, :receiver_id => 
 Message.create(:body => 'O que você quer?', :sender_id => 2, :receiver_id => 3)
 Message.create(:body => 'Sim, tiramos 10!', :sender_id => 1, :receiver_id => 3)
 Message.create(:body => 'Um livro.', :sender_id => 3, :receiver_id => 2)
-
-# Book.create(:isbn => '0212387', :title => 'Harry Potter', :author => 'JKRolling',
-#             :edition => '1', :language =>'Inglês', :pages => '529', :publisher => 'Rocco')
-# Book.create(:isbn => '0112387', :title => 'Código Da Vinci', :author => 'Dan Brown',
-#             :edition => '3', :language =>'Português', :pages => '498', :publisher => 'Rocco')
-# Book.create(:isbn => '0212357', :title => 'Ruby on Rails Tutorial', :author => 'Mickael Hartl',
-#             :edition => '7', :language =>'Inglês', :pages => '1234', :publisher => 'Online')
-# Book.create(:isbn => '0134387', :title => 'Engenharia de Software', :author => 'Sommerville',
-#             :edition => '2', :language =>'Português', :pages => '1109', :publisher => 'Abril')
-
-User.find(2).books << Book.find(3)
+User.find(2).books << Book.find(9)
+User.find(2).books << Book.find(4)
+User.find(3).books << Book.find(5)
+User.find(3).books << Book.find(9)
+User.find(1).books << Book.find(10)
+User.find(1).books << Book.find(7)
+User.find(1).books << Book.find(8)
+MyBook.create(:book_id => 9, :user_id => 1, :weight => 4)
+MyBook.create(:book_id => 4, :user_id => 1, :weight => 5)
+MyBook.create(:book_id => 10, :user_id => 2, :weight => 3)
+MyBook.create(:book_id => 8, :user_id => 3, :weight => 4)
+MyBook.create(:book_id => 4, :user_id => 3, :weight => 5)
+MyBook.create(:book_id => 8, :user_id => 2, :weight => 3)
