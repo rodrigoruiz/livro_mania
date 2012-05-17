@@ -27,7 +27,7 @@
   <%= render :partial => 'pages/rate' %>
 </div>
 <br/>
-<%= form_for(@rating, :url => rate_path, :remote => true, :html => { :id => 'rating_form' }) do |f| %>
+<%= form_for(@rating, :url => rate_path, :remote => true) do |f| %>
       <div><%= f.hidden_field :evaluator_id, :value => current_user.id %></div>
       <div><%= f.hidden_field :rated_user_id, :value => @user.id %></div>
       <div><%= f.submit 'Bom', :name => :thumbs_up, :class => 'btn btn-primary' %>
