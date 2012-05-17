@@ -10,6 +10,6 @@ class MyBooksController < ApplicationController
       @my_books = MyBook.find_all_by_book_id(book.id)
     end
     
-    @my_books.sort_by! { |my_book| current_user.distance(my_book.owner) }
+    @my_books.sort_by { |my_book| current_user.distance_to(my_book.owner) }
   end
 end
