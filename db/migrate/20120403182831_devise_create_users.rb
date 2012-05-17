@@ -39,6 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :cpf
       t.string :cep
+      t.string :address
 	    
   	  t.float :latitude
   	  t.float :longitude

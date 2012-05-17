@@ -1,5 +1,5 @@
 LivroMania::Application.routes.draw do
-  devise_for :users
+  devise_for :users #, :controllers => { :registrations => 'registrations' }
 
   root :to => 'pages#index'
   
@@ -15,6 +15,8 @@ LivroMania::Application.routes.draw do
   
   get '/messages', :to => 'messages#messages'
   post '/messages', :to => 'messages#respond_message'
+
+  #get '/fill_address', :to => 'applications#fill_address'
   
   get '/user_profile/:id', :to => 'pages#user_profile'
   
