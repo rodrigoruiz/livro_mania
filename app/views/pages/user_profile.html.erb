@@ -1,4 +1,4 @@
-<h2><%=@user.name%></h2>
+<h2><%= @user.name %></h2>
 <h3>Livros disponibilizados para troca</h3>
 <% @my_books.each do |my_book| %>
   	  Livro: <%= my_book.title %>
@@ -20,4 +20,16 @@
       <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
       <div><%= f.hidden_field :receiver_id, :value => @user.id %></div>
       <div><%= f.submit "Enviar", :class => 'btn btn-primary' %></div>
+<% end %>
+<br/>
+<h3>Confiabilidade:</h3>
+<div id='average_rating'>
+  <%= render :partial => 'pages/rate' %>
+</div>
+<br/>
+<%= form_for(@rating, :url => rate_path, :remote => true, :html => { :id => 'rating_form' }) do |f| %>
+      <div><%= f.hidden_field :evaluator_id, :value => current_user.id %></div>
+      <div><%= f.hidden_field :rated_user_id, :value => @user.id %></div>
+      <div><%= f.submit 'Bom', :name => :thumbs_up, :class => 'btn btn-primary' %>
+      <%= f.submit 'Ruim', :name => :thumbs_down, :class => 'btn btn-primary' %></div>
 <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412130421) do
+ActiveRecord::Schema.define(:version => 20120517123559) do
 
   create_table "books", :force => true do |t|
     t.string   "isbn"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20120412130421) do
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
   end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "evaluator_id"
+    t.integer  "rated_user_id"
+    t.boolean  "vote"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "ratings", ["evaluator_id", "rated_user_id"], :name => "index_ratings_on_evaluator_id_and_rated_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
