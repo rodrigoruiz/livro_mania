@@ -1,5 +1,5 @@
 class MyBook < ActiveRecord::Base
-  attr_accessible :weight, :additional_information, :photo
+  attr_accessible :weight, :additional_information, :photo, :user_id, :book_id
   
   validates :user_id, :presence => true
   validates :book_id, :presence => true

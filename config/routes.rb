@@ -1,7 +1,9 @@
 LivroMania::Application.routes.draw do
-  devise_for :users #, :controllers => { :registrations => 'registrations' }
+  devise_for :users
 
   root :to => 'pages#index'
+  
+  post '/find', :to => 'my_books#find'
   
   get '/new_my_book', :to => 'pages#new_my_book'
   post '/create_my_book', :to => 'pages#create_my_book'
@@ -10,13 +12,14 @@ LivroMania::Application.routes.draw do
   post '/add_desired_book', :to => 'pages#add_desired_book'
   delete '/remove_desired_book/:id', :to => 'pages#remove_desired_book'
   
-  
   get '/messages', :to => 'messages#messages'
   post '/messages', :to => 'messages#respond_message'
-
-  #get '/fill_address', :to => 'applications#fill_address'
   
   get '/user_profile/:id', :to => 'pages#user_profile'
+  
+  post '/rate', :to => 'pages#rate'
+  
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

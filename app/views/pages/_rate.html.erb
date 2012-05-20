@@ -1,0 +1,4 @@
+<%= image_tag('thumbs_up.jpg', :size => '40x40') %> <%= @thumbs_up %>
+<%= image_tag('thumbs_down.jpg', :size => '40x40') %> <%= @thumbs_down %>
+<br/>
+<% if !@current_user_vote.nil? %>Meu voto: <%= (@current_user_vote) ? 'Bom' : 'Ruim' %><% end %>

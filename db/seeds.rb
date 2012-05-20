@@ -45,4 +45,17 @@ File.open(filename, 'r') do |f|
 		puts book[0]
 		Book.create(:title => book[0], :author => book[1], :isbn => book[2], :pages => book[3], :edition => book[4], :language => book[5], :publisher => book[6])
 			end
-end
+
+User.find(2).books << Book.find(9)
+User.find(2).books << Book.find(4)
+User.find(3).books << Book.find(5)
+User.find(3).books << Book.find(9)
+User.find(1).books << Book.find(10)
+User.find(1).books << Book.find(7)
+User.find(1).books << Book.find(8)
+MyBook.create(:book_id => 9, :user_id => 1, :weight => 4)
+MyBook.create(:book_id => 4, :user_id => 1, :weight => 5)
+MyBook.create(:book_id => 10, :user_id => 2, :weight => 3)
+MyBook.create(:book_id => 8, :user_id => 3, :weight => 4)
+MyBook.create(:book_id => 4, :user_id => 3, :weight => 5)
+MyBook.create(:book_id => 8, :user_id => 2, :weight => 3)
