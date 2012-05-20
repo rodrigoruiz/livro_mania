@@ -36,3 +36,13 @@ Book.create(:isbn => '0212357', :title => 'Ruby on Rails Tutorial', :author => '
             :edition => '7', :language =>'Inglês', :pages => '1234', :publisher => 'Online')
 Book.create(:isbn => '0134387', :title => 'Engenharia de Software', :author => 'Sommerville',
             :edition => '2', :language =>'Português', :pages => '1109', :publisher => 'Abril')
+
+filename = "livros20120508-082751.txt"
+File.open(filename, 'r') do |f|
+	books = YAML.load(f)
+
+	books.each do |book|
+		puts book[0]
+		Book.create(:title => book[0], :author => book[1], :isbn => book[2], :pages => book[3], :edition => book[4], :language => book[5], :publisher => book[6])
+			end
+end
