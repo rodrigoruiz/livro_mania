@@ -21,7 +21,7 @@
   	<% end %>
 	  <br/>
   	<%= form_for(@book, :url => '/add_desired_book') do |f| %>
-  	  <div><%= f.text_field :title, :class => 'span2' %></div>
+      <div><%= f.autocomplete_field :title, autocomplete_book_title_pages_path %></div>
   	  <div><%= f.submit "Adicionar livro", :class => 'btn btn-primary' %></div>
   	<% end %>
   </div>

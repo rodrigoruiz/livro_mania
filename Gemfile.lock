@@ -59,6 +59,9 @@ GEM
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
+    jquery-ui-rails (0.4.0)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.7.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -89,6 +92,8 @@ GEM
       activesupport (= 3.2.3)
       bundler (~> 1.0)
       railties (= 3.2.3)
+    rails3-jquery-autocomplete (1.0.7)
+      rails (~> 3.0)
     railties (3.2.3)
       actionpack (= 3.2.3)
       activesupport (= 3.2.3)
@@ -133,8 +138,10 @@ DEPENDENCIES
   geocoder
   hpricot
   jquery-rails
+  jquery-ui-rails
   paperclip
   rails (= 3.2.3)
+  rails3-jquery-autocomplete
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

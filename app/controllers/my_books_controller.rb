@@ -1,4 +1,5 @@
 class MyBooksController < ApplicationController
+  autocomplete :book, :title
   def find
     puts params[:search_string]
     puts params[:search_string]

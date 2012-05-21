@@ -19,6 +19,9 @@ LivroMania::Application.routes.draw do
   
   post '/rate', :to => 'pages#rate'
   
+  resources :pages do
+    get :autocomplete_book_title, :on => :collection
+  end
   
   
   # The priority is based upon order of creation:

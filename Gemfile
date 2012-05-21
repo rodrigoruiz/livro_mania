@@ -46,3 +46,9 @@ gem 'hpricot'
 gem 'devise', '2.0.4'
 
 gem 'paperclip'
+
+#gem 'simple_autocomplete'
+
+gem 'rails3-jquery-autocomplete'
+
+gem 'jquery-ui-rails'
