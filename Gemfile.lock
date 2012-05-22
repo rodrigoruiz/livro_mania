@@ -133,6 +133,5 @@ DEPENDENCIES
   paperclip
   rails (= 3.2.3)
   rails3-jquery-autocomplete
-  sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
