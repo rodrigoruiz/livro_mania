@@ -37,6 +37,22 @@ class User < ActiveRecord::Base
   def sort_by_distance (user, users)
     users.sort_by{|a| user.distance_to(a)}
   end
+
+  def max_trocas (user)
+    x=0
+    user.my_books.each do |user_my_book|
+      if(books.include?(user_my_book.book))
+        x+=1
+      end
+    end
+    y=0
+    my_books.each do |my_book|
+      if(user.books.include?(my_book.book))
+        y+=1
+      end
+    end
+    [x,y].min
+  end
   
   private
     def fill_address
