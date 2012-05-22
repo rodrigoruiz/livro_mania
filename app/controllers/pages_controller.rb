@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  autocomplete :book, :title
   def index
     if current_user
       @my_books = current_user.my_books.sort_by { |my_book| my_book.title }

@@ -1,3 +1,7 @@
+<h1> a </h1>
+<h1> b </h1>
+<h1> c...</h1>
+
 <h1>Buscando no my_books por (<%= params[:search_string] %>) </h1>
 
 <table>
@@ -13,8 +17,16 @@
   <tr>
     <td><%= my_book.book.title %></td>
     <td><%= my_book.owner.name %></td>
+    <% if user_signed_in? %>
+      <td> <a href="/user_profile/<%= my_book.owner.id %>"> falar com usuario </a> </td>
+    <% end %>
   </tr>
 <% end %>
 </table>
+
+    <% if !user_signed_in? %>
+      <h3> Para começar a trocar, se cadastre e aproveite </h3>
+    <% end %>
+
 
 <br />

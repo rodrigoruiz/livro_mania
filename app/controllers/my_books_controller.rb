@@ -1,4 +1,5 @@
 class MyBooksController < ApplicationController
+  autocomplete :book, :title
   def find
     puts params[:search_string]
     puts params[:search_string]
@@ -9,7 +10,8 @@ class MyBooksController < ApplicationController
     books.each do |book|
       @my_books = MyBook.find_all_by_book_id(book.id)
     end
-    
-    @my_books.sort_by { |my_book| current_user.distance_to(my_book.owner) }
+    if user_signed_in?
+      @my_books.sort_by { |my_book| current_user.distance_to(my_book.owner) }
+    end
   end
 end
