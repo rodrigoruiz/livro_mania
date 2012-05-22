@@ -1,0 +1,24 @@
+<h1> a </h1>
+<h1> b </h1>
+<h1> c...</h1>
+
+<h1> Maximizando trocas... </h1>
+
+<table>
+  <tr>
+    <th> Nome do usuario </th>
+    <th> Trocas possiveis </th>
+    <th> </th>
+    <th> </th>
+    <th> </th>
+  </tr>
+
+ <% @users.each do |user| %>
+  <tr>
+    <td> <%= user.name %> </td> 
+    <td> <%= current_user.max_trocas(user) %> </td> 
+  </tr>
+ <% end %>
+</table>
+
+<br />
