@@ -23,6 +23,11 @@
 		</ul>
 	</div>
 <% else %>
+   <%= form_tag "/find" do %>
+    <%= text_field_tag :search_string %>
+    <%= submit_tag "Busca Livro" %>
+   <% end %>
   <%= link_to 'Sign up', new_user_registration_path, :class => 'btn btn-primary' %>
   <%= link_to 'Sign in', new_user_session_path, :class => 'btn' %>
 <% end %>
+
