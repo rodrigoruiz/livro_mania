@@ -8,6 +8,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(:email => 'halbuquerquevieira@gmail.com', :password => '123456', :password_confirmation => '123456',
+            :name => 'Heitor Vieira', :cpf => '067.704.724-06', :cep => '50680-170')
+
+User.create(:email => 'aderomir@gmail.com', :password => '123456', :password_confirmation => '123456',
+            :name => 'Antônio Deromir', :cpf => '044.284.103-52', :cep => '12245-525')
+
 User.create(:email => 'rodrigo.ruiz7@gmail.com', :password => '07091990', :password_confirmation => '07091990',
             :name => 'Rodrigo Ruiz', :cpf => '384.546.898-00', :cep => '04320-120')
 
@@ -37,15 +43,6 @@ Book.create(:isbn => '0212357', :title => 'Ruby on Rails Tutorial', :author => '
 Book.create(:isbn => '0134387', :title => 'Engenharia de Software', :author => 'Sommerville',
             :edition => '2', :language =>'Português', :pages => '1109', :publisher => 'Abril')
 
-filename = "livros20120508-082751.txt"
-File.open(filename, 'r') do |f|
-	books = YAML.load(f)
-
-	books.each do |book|
-		puts book[0]
-		Book.create(:title => book[0], :author => book[1], :isbn => book[2], :pages => book[3], :edition => book[4], :language => book[5], :publisher => book[6])
-			end
-
 User.find(2).books << Book.find(9)
 User.find(2).books << Book.find(4)
 User.find(3).books << Book.find(5)
@@ -53,6 +50,7 @@ User.find(3).books << Book.find(9)
 User.find(1).books << Book.find(10)
 User.find(1).books << Book.find(7)
 User.find(1).books << Book.find(8)
+
 MyBook.create(:book_id => 9, :user_id => 1, :weight => 4)
 MyBook.create(:book_id => 4, :user_id => 1, :weight => 5)
 MyBook.create(:book_id => 10, :user_id => 2, :weight => 3)
