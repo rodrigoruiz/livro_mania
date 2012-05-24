@@ -16,7 +16,7 @@
 
       <div class='search'>
         <%= form_tag "/find" do %>
-          <%= text_field_tag :search_string, value='Digite sua busca', :class => 'fieldSearch' %>
+          <%= autocomplete_field_tag :search_string, '', autocomplete_book_title_pages_path, :class => 'fieldSearch', :placeholder => 'Digite sua busca' %>
           <%= submit_tag "Ok", :class => 'btn-primary btnBusca' %>
          <% end %>
       </div>

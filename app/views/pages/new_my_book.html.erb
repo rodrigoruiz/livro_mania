@@ -3,7 +3,7 @@
 <h1> c...</h1>
 
 <%= form_for(@my_book, :url => create_my_book_path, :html => { :multipart => true }) do |f| %>
-  <div><%= f.label :title %> <%= f.text_field :title %></div>
+  <div><%= f.label :title %> <%= f.autocomplete_field :title, autocomplete_book_title_pages_path %></div>
   <div><%= f.label :weight %> <%= f.text_field :weight %></div>
   <div><%= f.label :additional_information %> <%= f.text_field :additional_information %></div>
   <div><%= f.label :photo %> <%= f.file_field :photo %></div>
