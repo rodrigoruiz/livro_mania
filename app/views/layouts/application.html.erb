@@ -16,7 +16,7 @@
 
       <div class='search'>
         <%= form_tag "/find" do %>
-          <%= text_field_tag :search_string, value='Digite sua busca', :class => 'fieldSearch' %>
+          <%= text_field_tag :search_string, value='', :class => 'fieldSearch' %>
           <%= submit_tag "Ok", :class => 'btn-primary btnBusca' %>
          <% end %>
       </div>

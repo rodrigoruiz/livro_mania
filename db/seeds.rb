@@ -12,13 +12,13 @@ User.create(:email => 'halbuquerquevieira@gmail.com', :password => '123456', :pa
             :name => 'Heitor Vieira', :cpf => '067.704.724-06', :cep => '50680-170')
 
 User.create(:email => 'aderomir@gmail.com', :password => '123456', :password_confirmation => '123456',
-            :name => 'Antônio Deromir', :cpf => '044.284.103-52', :cep => '12245-525')
+            :name => 'Antônio Deromir', :cpf => '044.284.103-52', :cep => '60430-580')
 
 User.create(:email => 'rodrigo.ruiz7@gmail.com', :password => '07091990', :password_confirmation => '07091990',
             :name => 'Rodrigo Ruiz', :cpf => '384.546.898-00', :cep => '04320-120')
 
 User.create(:email => 'luamaralalmeida@gmail.com', :password => 'luisaa', :password_confirmation => 'luisaa',
-            :name => 'Luisa', :cpf => '108.893.446-39', :cep => '12228-460')
+            :name => 'Luisa', :cpf => '108.893.446-39', :cep => '35500-095')
 
 User.create(:email => 'cassiokendi@gmail.com', :password => 'cassio', :password_confirmation => 'cassio',
             :name => 'Cassio', :cpf => '383.732.868-61', :cep => '12243-750')
