@@ -24,7 +24,7 @@ User.create(:email => 'cassiokendi@gmail.com', :password => 'cassio', :password_
             :name => 'Cassio', :cpf => '383.732.868-61', :cep => '12243-750')
 
 Message.create(:body => 'Oi, quer me dar aula do Jackson?', :sender_id => 1, :receiver_id => 2)
-Message.create(:body => 'Pode ser, mas você faz o trabalho do Clovis People', :sender_id => 2, :receiver_id => 1)
+Message.create(:body => 'Pode ser, mas você faz o trabalho do Clovis', :sender_id => 2, :receiver_id => 1)
 Message.create(:body => 'Ah, e tem que fazer bem feito!', :sender_id => 2, :receiver_id => 1)
 Message.create(:body => 'Oi, como vai você?', :sender_id => 3, :receiver_id => 2)
 Message.create(:body => 'Fechado, só não quero trancar!', :sender_id => 1, :receiver_id => 2)

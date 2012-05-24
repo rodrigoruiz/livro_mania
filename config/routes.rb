@@ -2,7 +2,7 @@ LivroMania::Application.routes.draw do
   devise_for :users
 
   root :to => 'pages#index'
-  
+
   post '/find', :to => 'my_books#find'
   
   get '/max_trocas', :to => 'my_books#max_trocas'

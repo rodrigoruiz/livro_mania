@@ -6,10 +6,10 @@
     <% end %>
     
     <%= form_for(@message) do |f| %>
-      <div><%= f.text_area :body, :rows => '3' %></div>
-      <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
-      <div><%= f.hidden_field :receiver_id, :value => other_person.id %></div>
-      <div><%= f.submit "Enviar", :class => 'btn btn-primary' %></div>
+      <%= f.text_area :body, :rows => '3' %>
+      <%= f.hidden_field :sender_id, :value => current_user.id %>
+      <%= f.hidden_field :receiver_id, :value => other_person.id %>
+      <%= f.submit "Enviar", :class => 'btn btn-primary' %>
     <% end %>
   </div>
 <% end %>

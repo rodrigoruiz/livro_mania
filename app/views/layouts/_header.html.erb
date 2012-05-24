@@ -1,33 +1,24 @@
 <% if user_signed_in? %>
-  <a class='btn btn-navbar' data-toggle='collapse' data-target='.nav-collapse'>
-    <span class='icon-bar'></span>
-    <span class='icon-bar'></span>
-    <span class='icon-bar'></span>
-  </a>
-  
-  <%= link_to 'Livro Mania', '#', :class => 'brand' %>
-  
-  <div class='nav-collapse pull-right'>
-    
-      <%= form_tag "/find" do %>
-        <%= text_field_tag :search_string %>
-        <%= submit_tag "Busca Livro" %>
-       <% end %>
-		
-		
-		<ul class='nav'>
-  	  <li class='<%= 'active' if request.fullpath == root_path %>'><%= link_to 'Home', root_path %></li>
-  		<li class='<%= 'active' if request.fullpath == messages_path %>'><%= link_to 'Mensagens', messages_path %></li>
-  		<li class='<%= 'active' if request.fullpath == edit_user_registration_path %>'><%= link_to 'Editar conta', edit_user_registration_path %></li>
-  		<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
-		</ul>
-	</div>
+<div class='navbar'>
+  <div class='navbar-inner'>
+        <div class='container'>
+          <ul class='nav'>	
+              <li class='<%= 'active' if request.fullpath == root_path %>'><%= link_to 'Home', root_path %></li>
+              <li class='<%= 'active' if request.fullpath == messages_path %>'><%= link_to 'Mensagens', messages_path %></li>
+              <li class='<%= 'active' if request.fullpath == edit_user_registration_path %>'><%= link_to 'Editar conta', edit_user_registration_path %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+          </ul>
+        </div>
+  </div>
+</div>
+
 <% else %>
-   <%= form_tag "/find" do %>
-    <%= text_field_tag :search_string %>
-    <%= submit_tag "Busca Livro" %>
-   <% end %>
+<div class='login'>
+  <div class=''>
+    <p>Olá visitante !!</p>
+  </div>
   <%= link_to 'Sign up', new_user_registration_path, :class => 'btn btn-primary' %>
-  <%= link_to 'Sign in', new_user_session_path, :class => 'btn' %>
+  <%= link_to 'Sign in', new_user_session_path, :class => 'btn btn-primary' %>
+</div>
 <% end %>
 

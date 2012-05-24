@@ -19,7 +19,7 @@
       <div><%= f.text_area :body, :rows => '3' %></div>
       <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
       <div><%= f.hidden_field :receiver_id, :value => @user.id %></div>
-      <div><%= f.submit "Enviar", :class => 'btn btn-primary' %></div>
+      <div><%= f.submit "Enviar" %></div>
 <% end %>
 <br/>
 <h3>Confiabilidade:</h3>
@@ -30,6 +30,6 @@
 <%= form_for(@rating, :url => rate_path, :remote => true) do |f| %>
       <div><%= f.hidden_field :evaluator_id, :value => current_user.id %></div>
       <div><%= f.hidden_field :rated_user_id, :value => @user.id %></div>
-      <div><%= f.submit 'Bom', :name => :thumbs_up, :class => 'btn btn-primary' %>
-      <%= f.submit 'Ruim', :name => :thumbs_down, :class => 'btn btn-primary' %></div>
+      <div><%= f.submit 'Bom', :name => :thumbs_up %>
+      <%= f.submit 'Ruim', :name => :thumbs_down %></div>
 <% end %>

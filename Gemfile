@@ -32,7 +32,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-# gem 'anjlab-bootstrap-rails', '>= 2.0.3.2', :require => 'bootstrap-rails'
+ gem 'anjlab-bootstrap-rails', '>= 2.0.3.2', :require => 'bootstrap-rails'
 
 gem 'geocoder'
 

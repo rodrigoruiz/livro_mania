@@ -1,1 +1,41 @@
+<% if user_signed_in? %>
+
 <%= render 'pages/profile' if user_signed_in? %>
+
+<% else %>
+
+<div class='livros'>
+  <div class='passo1'>  
+      <h3>Crie uma conta</h3>
+      	<%= image_tag 'passo1.png' %>
+      <div class='boneco1'>
+      </div>
+
+  </div>
+
+  <div class='passo2'>  
+      <h3>Encontre alguém</h3>
+      	<%= image_tag 'passo2.png' %>
+      <div class='boneco2'>
+      </div>
+
+  </div>
+
+  <div class='passo3'>  
+      <h3>Combine a entrega</h3>
+      	<%= image_tag 'passo3.png' %>
+      <div class='boneco3'>
+      </div>
+
+  </div>
+
+  <div class='passo4'>  
+      <h3>Curta a leitura</h3>
+      	<%= image_tag 'passo4.png' %>
+      <div class='boneco4'>
+      </div>
+
+  </div>
+</div>
+
+<% end %>

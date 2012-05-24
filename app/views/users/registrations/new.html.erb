@@ -3,23 +3,35 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   
-  <div><%= f.label :name %><br/>
-  <%= f.text_field :name %></div>
+  <div class='control-group'>
+    <%= f.label :name, :class => 'control-label' %>
+    <div class='controls'><%= f.text_field :name %></div>
+  </div>
   
-  <div><%= f.label :cpf %><br/>
-  <%= f.text_field :cpf %></div>
+  <div class='control-group'>
+    <%= f.label :cpf, :class => 'control-label' %>
+    <div class='controls'><%= f.text_field :cpf %></div>
+  </div>
   
-  <div><%= f.label :cep %><br/>
-  <%= f.text_field :cep %></div>
+  <div class='control-group'>
+    <%= f.label :cep, :class => 'control-label' %>
+    <div class='controls'><%= f.text_field :cep %></div>
+  </div>
   
-  <div><%= f.label :email %><br/>
-  <%= f.email_field :email %></div>
+  <div class='control-group'>
+    <%= f.label :email, :class => 'control-label' %>
+    <div class='controls'><%= f.email_field :email %></div>
+  </div>
   
-  <div><%= f.label :password %><br/>
-  <%= f.password_field :password %></div>
+  <div class='control-group'>
+    <%= f.label 'Nova senha', :class => 'control-label' %>
+    <div class='controls'><%= f.password_field :password, :autocomplete => "off", :placeholder => '**************' %></div>
+  </div>
   
-  <div><%= f.label :password_confirmation %><br/>
-  <%= f.password_field :password_confirmation %></div>
+  <div class='control-group'>
+    <%= f.label 'Confirmar nova senha', :class => 'control-label' %>
+    <div class='controls'><%= f.password_field :password_confirmation, :placeholder => '**************' %></div>
+  </div>
   
   <div><%= f.submit "Sign up" %></div>
 <% end %>

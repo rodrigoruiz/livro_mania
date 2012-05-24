@@ -1,42 +1,44 @@
-<div class='row'>
-  <div class='span2 offset3'>
-  	<h3>Meus livros</h3>
-  	<% @my_books.each do |my_book| %>
-  	  <%= my_book.title %>
-  	  <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
-  	  <br/>
-  	<% end %>
-  	
-	  <br/>
-	  
-	  <%= link_to 'Adicionar livro', new_my_book_path %>
-  </div>
-  
-  <div class='span2 offset2'>
-  	<h3>Livros que desejo</h3>
-  	<% @desired_books.each do |book| %>
-  	  <%= book.title %>
-  	  <%= link_to 'Remover', "/remove_desired_book/#{book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
-  	  <br/><br/>
-  	<% end %>
-	  <br/>
-  	<%= form_for(@book, :url => '/add_desired_book') do |f| %>
-      <div><%= f.autocomplete_field :title, autocomplete_book_title_pages_path %></div>
-  	  <div><%= f.submit "Adicionar livro", :class => 'btn btn-primary' %></div>
-  	<% end %>
-  </div>
-</div>
 
+  <div class='livros'>
+      <div class='meusLivros'> 	
+        <h3>Meus livros</h3>
+      	<% @my_books.each do |my_book| %>
+        <div class='item'>
+      	  <div class='titulo'><%= my_book.title %></div>
+      	  <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete , :class => 'btn btn-mini btn-danger pull-right floatleft'%>
+        </div>
+      	<% end %>
+      	
+    	  <br/>
+    	  <div class='addBook'>
+    	    <%= link_to 'Adicionar livro', new_my_book_path, :class => 'btn btn-primary' %>
+        </div>
+      </div>
+
+      <div class='livrosDesejados'>
+      	<h3>Livros que desejo</h3>
+      	<% @desired_books.each do |book| %>
+      	  <div class='titulo'><%= book.title %></div>
+      	  <%= link_to 'Remover', "/remove_desired_book/#{book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
+      	  <br/><br/>
+      	<% end %>
+    	  <br/>
+      	<%= form_for(@book, :url => '/add_desired_book') do |f| %>
+          <div><%= f.autocomplete_field :title, autocomplete_book_title_pages_path, :class => 'span2' %></div>
+      	  <div><%= f.submit "Adicionar livro", :class => 'btn btn-primary' %></div>
+      	<% end %>
+      </div>
+
+  </div>
+
+<div class='rodape'>
+    <form >
+      <div class='btn span4'><%= link_to 'Maximizar Trocas', max_trocas_path %> </div>
+    </form>
 <br/>
-
-<div class='row'>
-  <div class='offset4'>
-  	<%= link_to 'Maximizar Trocas', max_trocas_path %>
-  </div>
-</div>
-<hr/>
-<div id='average_rating'>
-  <h3>Minha confiabilidade:</h3>
-  <%= image_tag('thumbs_up.jpg', :size => '40x40') %> <%= @thumbs_up %>
-  <%= image_tag('thumbs_down.jpg', :size => '40x40') %> <%= @thumbs_down %>
+    <div id='average_rating'>
+      <h3>Minha confiabilidade:</h3>
+      <%= image_tag('thumbs_up.jpg', :size => '40x40') %> <%= @thumbs_up %>
+      <%= image_tag('thumbs_down.jpg', :size => '40x40') %> <%= @thumbs_down %>
+    </div>
 </div>

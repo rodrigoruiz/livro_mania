@@ -7,19 +7,27 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class='navbar navbar-fixed-top'>
-      <div class='navbar-inner'>
-        <div class='container'>
-          <%= render 'layouts/header' %>
-        </div>
+    <div class='header'>
+      <%= link_to '', root_path, :class=>'logo' %>
+
+      <div class='boxUser'>
+            <%= render 'layouts/header' %>
       </div>
+
+      <div class='search'>
+        <%= form_tag "/find" do %>
+          <%= text_field_tag :search_string, value='Digite sua busca', :class => 'fieldSearch' %>
+          <%= submit_tag "Ok", :class => 'btn-primary btnBusca' %>
+         <% end %>
+      </div>
+
     </div>
-    
-    <div class='container-fluid'>
+    <div class='corpo'>
       <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
       <% if alert %><p class='alert alert-error'><%= alert %></p><% end %>
-      
+
       <%= yield %>
+
     </div>
   </body>
 </html>

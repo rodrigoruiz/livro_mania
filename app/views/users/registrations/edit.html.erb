@@ -1,11 +1,10 @@
-<div style='text-align:center;' class='span4 offset4'>
   <h2>Editar minha conta</h2>
   
   <br/>
   
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
     <%= devise_error_messages! %>
-    
+      
     <div class='control-group'>
       <%= f.label :name, :class => 'control-label' %>
       <div class='controls'><%= f.text_field :name %></div>
@@ -46,5 +45,5 @@
   
   <h3>Cancelar minha conta</h3>
   
-  <p>Infeliz? <%= link_to "Cancelar minha conta", registration_path(resource_name), :confirm => "Você tem certeza?", :method => :delete %>.</p>
+  <p class='red'>Infeliz? <%= link_to "Cancelar minha conta", registration_path(resource_name), :confirm => "Você tem certeza?", :method => :delete, :class => 'red' %>.</p>
 </div>

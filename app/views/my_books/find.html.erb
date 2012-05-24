@@ -1,13 +1,10 @@
-<h1> a </h1>
-<h1> b </h1>
-<h1> c...</h1>
-
 <h1>Buscando no my_books por (<%= params[:search_string] %>) </h1>
 
 <table>
   <tr>
     <th>Titulo do Livro</th>
     <th> / Dono do livro</th>
+    <th> / Distância</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +14,8 @@
   <tr>
     <td><%= my_book.book.title %></td>
     <td><%= my_book.owner.name %></td>
+    <%= puts "**************************** #{current_user.distance_to(my_book.owner)} ****************************" %>
+    <td><%= current_user.distance_to(my_book.owner) %></td>
     <% if user_signed_in? %>
       <td> <a href="/user_profile/<%= my_book.owner.id %>"> falar com usuario </a> </td>
     <% end %>
