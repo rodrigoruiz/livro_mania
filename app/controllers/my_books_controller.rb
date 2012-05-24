@@ -14,7 +14,7 @@ class MyBooksController < ApplicationController
 
   def max_trocas
     @users = User.find(:all)
-    @users.sort_by! { |user| current_user.max_trocas(user) }  
+    @users.sort_by! { |user| -current_user.max_trocas(user) }  
   end
 
 end

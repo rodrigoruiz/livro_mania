@@ -1,3 +1,31 @@
+<div class='row'>
+  <div class='span2 offset3'>
+  	<h3>Meus livros</h3>
+  	<% @my_books.each do |my_book| %>
+  	  <%= my_book.title %>
+  	  <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
+  	  <br/>
+  	<% end %>
+  	
+	  <br/>
+	  
+	  <%= link_to 'Adicionar livro', new_my_book_path %>
+  </div>
+  
+  <div class='span2 offset2'>
+  	<h3>Livros que desejo</h3>
+  	<% @desired_books.each do |book| %>
+  	  <%= book.title %>
+  	  <%= link_to 'Remover', "/remove_desired_book/#{book.id}", :method => :delete, :class => 'btn btn-mini btn-danger pull-right' %>
+  	  <br/><br/>
+  	<% end %>
+	  <br/>
+  	<%= form_for(@book, :url => '/add_desired_book') do |f| %>
+      <div><%= f.autocomplete_field :title, autocomplete_book_title_pages_path %></div>
+  	  <div><%= f.submit "Adicionar livro", :class => 'btn btn-primary' %></div>
+  	<% end %>
+  </div>
+</div>
 
   <div class='livros'>
       <div class='meusLivros'> 	
