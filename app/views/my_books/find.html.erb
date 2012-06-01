@@ -22,6 +22,11 @@
   </tr>
 <% end %>
 </table>
+	<% if user_signed_in? && @my_books.empty? %>
+	<br>
+	  <b>Nenhum usuário possui este livro.</b>   
+      <%= submit_tag "Avise-me quando houver"%>
+    <% end %>
 
     <% if !user_signed_in? %>
       <h3> Para começar a trocar, se cadastre e aproveite </h3>
