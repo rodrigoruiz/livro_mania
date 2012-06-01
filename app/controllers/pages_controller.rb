@@ -43,4 +43,15 @@ class PagesController < ApplicationController
     
     @current_user_vote = rating.vote
   end
+  
+  def contact_us_form
+  end
+  
+  def send_contact_us_email
+    book_title =  params[:book_title]
+    addicional_information = params[:addicional_information]
+    UserMailer.new_book_requesting_email(current_user.email, book_title, addicional_information).deliver
+    flash[:notice]="O livro #{book_title} foi solicitado."    
+    redirect_to root_path
+  end
 end

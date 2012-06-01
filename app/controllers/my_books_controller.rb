@@ -1,10 +1,11 @@
+#encoding: utf-8
+
 class MyBooksController < ApplicationController
   autocomplete :book, :title
   
   def find
-    book = Book.find_by_title(params[:search_string])
-    @my_books = MyBook.find_all_by_book_id(book.id)
-    
+    @book = Book.find_by_title(params[:search_string])
+    @my_books = MyBook.find_all_by_book_id(@book.id)
     @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) } if user_signed_in?
   end
   
@@ -52,6 +53,7 @@ class MyBooksController < ApplicationController
   
   def add_missing_book_notification
     MissingBookNotification.create(:user => current_user, :book => Book.find(params[:book_id]))
+    flash[:notice]='Você receberá um email quando este livro estiver disponível.'
     redirect_to root_path
   end
   
