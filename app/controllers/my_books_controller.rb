@@ -59,7 +59,7 @@ class MyBooksController < ApplicationController
   
   private
     def check_missing_book_notification(book)
-      MissingBookNotification.find_by_book_id(book.id).each do |missing_book_notification|
+      MissingBookNotification.find_all_by_book_id(book.id).each do |missing_book_notification|
         UserMailer.missing_book_notification_email(missing_book_notification.user, book).deliver
         missing_book_notification.destroy
       end

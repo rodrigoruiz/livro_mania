@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class UserMailer < ActionMailer::Base
   default from: 'livromaniaita@gmail.com'
   
@@ -10,6 +12,6 @@ class UserMailer < ActionMailer::Base
   def new_book_requesting_email(user_email, book_title, addicional_information)
     @book_title = book_title
     @addicional_information = addicional_information 
-     mail(:to => 'livromaniaita@gmail.com', :from=> user_email, :subject => 'Solicitação de livro')    
+    mail(:to => 'livromaniaita@gmail.com', :from=> user_email, :subject => 'Solicitação de livro')    
   end
 end
