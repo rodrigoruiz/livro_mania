@@ -5792,7 +5792,7 @@ body
     border: windowframe;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 40px;
     width: 960px;
     
     background-color: transparent;
@@ -5806,6 +5806,7 @@ body
     border: windowframe;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
 }
 
 .logo
@@ -5822,9 +5823,9 @@ body
 .boxUser
 {
   position:absolute;
-  top:10px;
+  bottom:0px;
   right:0;
-  height:90px;
+  height:78px;
   width:220px;
   z-index: 1030;
 }
