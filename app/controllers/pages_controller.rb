@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   autocomplete :book, :title
+  
   def index
     if current_user
       @my_books = current_user.my_books.sort_by { |my_book| my_book.title }
@@ -12,41 +13,6 @@ class PagesController < ApplicationController
     end
     
     @book = Book.new
-  end
-  
-  def new_my_book
-    @my_book = MyBook.new
-    @my_book.book = Book.new
-  end
-  
-  def create_my_book
-    title = params[:my_book][:title]
-    params[:my_book].delete(:title)
-    my_book = MyBook.new(params[:my_book])
-    my_book.book = Book.find_by_title(title)
-    my_book.owner = current_user
-    my_book.save
-    
-    redirect_to root_path
-  end
-  
-  def remove_my_book
-    MyBook.find(params[:id]).destroy
-    
-    redirect_to root_path
-  end
-  
-  def add_desired_book
-    book = Book.where(:title => params[:book][:title]).first
-    current_user.books << book if book && !current_user.books.include?(book)
-    
-    redirect_to root_path
-  end
-  
-  def remove_desired_book
-    current_user.books.delete(Book.find(params[:id]))
-    
-    redirect_to root_path
   end
   
   def user_profile
@@ -76,5 +42,16 @@ class PagesController < ApplicationController
     user_ratings.each { |rating| (rating.vote) ? @thumbs_up += 1 : @thumbs_down += 1 }
     
     @current_user_vote = rating.vote
+  end
+  
+  def contact_us_form
+  end
+  
+  def send_contact_us_email
+    book_title =  params[:book_title]
+    addicional_information = params[:addicional_information]
+    UserMailer.new_book_requesting_email(current_user.email, book_title, addicional_information).deliver
+    flash[:notice]="O livro #{book_title} foi solicitado."    
+    redirect_to root_path
   end
 end

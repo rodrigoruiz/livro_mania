@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517123559) do
+ActiveRecord::Schema.define(:version => 20120601171731) do
 
   create_table "books", :force => true do |t|
     t.string   "isbn"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(:version => 20120517123559) do
     t.string   "body"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "missing_book_notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "my_books", :force => true do |t|

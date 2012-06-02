@@ -1,30 +1,28 @@
-<h1>Buscando no my_books por (<%= params[:search_string] %>) </h1>
-
+<h1>Buscando livro: <%= params[:search_string] %></h1>
+<br/>
 <table>
-  <tr>
-    <th>Titulo do Livro</th>
-    <th> / Dono do livro</th>
-    <th> / Distância</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @my_books.each do |my_book| %>
-  <tr>
-    <td><%= my_book.book.title %></td>
-    <td><%= my_book.owner.name %></td>
-    <% if user_signed_in? %>
-    <td><%= current_user.distance_to(my_book.owner) %></td>
-      <td> <a href="/user_profile/<%= my_book.owner.id %>"> falar com usuario </a> </td>
-    <% end %>
-  </tr>
-<% end %>
+	<tr>
+		<th>Titulo do Livro</th>
+		<th>Dono do livro</th>
+		<% if user_signed_in? %> <th>Distância</th>
+		<th></th>
+		<% end %>
+	</tr>
+	<% @my_books.each do |my_book| %>
+	<tr>
+		<td><%= my_book.book.title %></td>
+		<td><%= my_book.owner.name %></td>
+		<% if user_signed_in? %> <td><%= current_user.distance_to(my_book.owner) %></td>
+		<td><a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a></td>
+		<% end %>
+	</tr>
+	<% end %>
 </table>
 
-    <% if !user_signed_in? %>
-      <h3> Para começar a trocar, se cadastre e aproveite </h3>
-    <% end %>
+<% if user_signed_in? && @my_books.empty? %>
+	<br>
+	<b>Nenhum usuário possui este livro.</b>
+	<%= link_to "Avise-me quando houver", add_missing_book_notification_path(@book.id), :method=>"post" %>
+<% end %>
 
-
-<br />
+<% if !user_signed_in? %><h3> Para começar a trocar, se cadastre e aproveite </h3><% end %>

@@ -1,24 +1,23 @@
 LivroMania::Application.routes.draw do
   devise_for :users
-
+  
   root :to => 'pages#index'
-
+  
   post '/find', :to => 'my_books#find'
-  
   get '/max_trocas', :to => 'my_books#max_trocas'
-  
-  get '/new_my_book', :to => 'pages#new_my_book'
-  post '/create_my_book', :to => 'pages#create_my_book'
-  delete '/remove_my_book/:id', :to => 'pages#remove_my_book'
-  
-  post '/add_desired_book', :to => 'pages#add_desired_book'
-  delete '/remove_desired_book/:id', :to => 'pages#remove_desired_book'
-  
+  get '/new_my_book', :to => 'my_books#new_my_book'
+  post '/create_my_book', :to => 'my_books#create_my_book'
+  delete '/remove_my_book/:id', :to => 'my_books#remove_my_book'
+  post '/add_desired_book', :to => 'my_books#add_desired_book'
+  delete '/remove_desired_book/:id', :to => 'my_books#remove_desired_book'
+  post '/add_missing_book_notification/:book_id', :to => 'my_books#add_missing_book_notification', :as => 'add_missing_book_notification'
+  get '/contact_us', :to=>'pages#contact_us_form'
+  post '/send_contact_us', :to=>'pages#send_contact_us_email'
+
   get '/messages', :to => 'messages#messages'
   post '/messages', :to => 'messages#respond_message'
   
   get '/user_profile/:id', :to => 'pages#user_profile'
-  
   post '/rate', :to => 'pages#rate'
   
   resources :pages do
