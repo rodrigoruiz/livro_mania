@@ -1,5 +1,6 @@
 <h1>Buscando livro: <%= params[:search_string] %></h1>
 <br/>
+<% if @my_books %>
 <table>
 	<tr>
 		<th>Titulo do Livro</th>
@@ -18,7 +19,6 @@
 	</tr>
 	<% end %>
 </table>
-
 <% if user_signed_in? && @my_books.empty? %>
 	<br>
 	<b>Nenhum usuário possui este livro.</b>
@@ -26,3 +26,9 @@
 <% end %>
 
 <% if !user_signed_in? %><h3> Para começar a trocar, se cadastre e aproveite </h3><% end %>
+
+<% else %>
+	<tr>
+		<td>Não encontrado.</td>
+	</tr>
+<% end %>
