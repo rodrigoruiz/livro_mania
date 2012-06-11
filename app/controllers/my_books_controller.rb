@@ -5,8 +5,12 @@ class MyBooksController < ApplicationController
   
   def find
     @book = Book.find_by_title(params[:search_string])
-    @my_books = MyBook.find_all_by_book_id(@book.id)
-    @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) } if user_signed_in?
+    if @book
+      @my_books = MyBook.find_all_by_book_id(@book.id)
+      @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) } if user_signed_in?
+    else
+      redirect_to root_path, :alert => "Livro não encontrado."
+    end
   end
   
   def max_trocas
@@ -24,12 +28,16 @@ class MyBooksController < ApplicationController
     params[:my_book].delete(:title)
     my_book = MyBook.new(params[:my_book])
     my_book.book = Book.find_by_title(title)
-    my_book.owner = current_user
-    my_book.save
-    
-    check_missing_book_notification(my_book.book)
-    
-    redirect_to root_path
+    if my_book.book
+      my_book.owner = current_user
+      my_book.save
+      
+      check_missing_book_notification(my_book.book)
+      
+      redirect_to root_path
+    else
+      redirect_to new_my_book_path, :alert => "Livro não encontrado."      
+    end
   end
   
   def remove_my_book
@@ -40,9 +48,13 @@ class MyBooksController < ApplicationController
   
   def add_desired_book
     book = Book.where(:title => params[:book][:title]).first
-    current_user.books << book if book && !current_user.books.include?(book)
-    
-    redirect_to root_path
+
+    if book
+      current_user.books << book if !current_user.books.include?(book)
+      redirect_to root_path
+    else
+      redirect_to root_path, :alert => "Livro não encontrado."
+    end
   end
   
   def remove_desired_book
