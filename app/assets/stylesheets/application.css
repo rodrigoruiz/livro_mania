@@ -6371,3 +6371,23 @@ body
 {
   width:400px;
 }
+
+.buscaAvancada
+{
+  width:650px;
+  
+  padding: 10px;
+  border-top:none;
+  margin-top:8px;
+  margin-right:8px;
+  
+  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
+  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; /* IE8+ */
+  
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+
+  background-color: white; 
+}

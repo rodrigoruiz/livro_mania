@@ -17,18 +17,11 @@ class MyBooksController < ApplicationController
     end
   end
 
-  def mapa 
-      @lat1 = current_user.latitude
-      @lon1 = current_user.longitude
-      @lat2 = latitude
-      @lon2 = longitude
-  end
-
   def map 
       @lat1 = current_user.latitude
-      @lon1 = current_user.latitude
-      @lat2 = params[:usuario].latitude
-      @lon2 = params[:usuario].latitude
+      @lon1 = current_user.longitude
+      @lat2 = User.find(params[:user_id]).latitude
+      @lon2 = User.find(params[:user_id]).longitude
   end
 
   def find_user

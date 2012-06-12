@@ -5,7 +5,6 @@ LivroMania::Application.routes.draw do
   
   post '/find', :to => 'my_books#find'
 
-  post '/mapa', :to => 'my_books#mapa'
   post '/map', :to => 'my_books#map'
 
   post '/find_user', :to => 'my_books#find_user'

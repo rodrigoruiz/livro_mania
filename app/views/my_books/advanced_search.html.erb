@@ -1,3 +1,4 @@
+<div class="buscaAvancada">
 <h1> Selecione as opções avançadas de busca </h1>
 
 <table>
@@ -5,7 +6,7 @@
 		<h2> Procura Usuário </h2>
 		<%= form_tag "/find_user" do %>
 	    	<%= text_field_tag :search_string2 , nil, :placeholder => 'Nome do Usuario' %>
-	    	<%= submit_tag "Busca Usuario" %>
+	    	<%= submit_tag "Busca Usuario", :class => 'btn-primary btnBusca searchButton' %>
 	    	<br> <%= check_box_tag :exato, 1, false %> Nome Exato </br>
 		  <% end %>
 	</tr>
@@ -14,7 +15,7 @@
 		
 		  	<%= form_tag "/find_advanced" do %>
 		    	<%= text_field_tag :search_string3 , nil, :placeholder => 'Palavra Buscada' %>
-		    	<%= submit_tag "Busca Livro" %>
+		    	<%= submit_tag "Busca Livro", :class => 'btn-primary btnBusca searchButton' %>
 				<h3> Opções </h3>
 				<label for = :opcao>  </label>
 				<br><%= radio_button_tag :opcao, 'Autor', true %> Autor </br>
@@ -30,5 +31,4 @@
 	    	<% end %>
 			
     	</div>
-
-	
+</div>

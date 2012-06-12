@@ -35,7 +35,7 @@
 			Distância: 
 			<% if user_signed_in? %>
 			<% if current_user.distance_to(my_book.owner)%>
-				<%= "%.2f" % current_user.distance_to(my_book.owner) %>
+				<%= "%.2f" % current_user.distance_to(my_book.owner) %> Km
 			<% end %>
 				<% else %>
 				Logue-se para acessar a distância
@@ -44,6 +44,10 @@
 		<div class="descricao">
 			<%= my_book.additional_information %>
 		</div>
+		<%= form_tag "/map" do %>
+			<%= hidden_field_tag 'user_id', my_book.owner.id %>
+			<%= submit_tag 'Visualizar no mapa', :class => 'btn-primary btnBusca searchButton', :onload => 'initialize()' %>
+		<% end %>
 		
 	</div>
 	
