@@ -4,6 +4,8 @@ LivroMania::Application.routes.draw do
   root :to => 'pages#index'
   
   post '/find', :to => 'my_books#find'
+  post '/mapa', :to => 'my_books#mapa'
+  post '/map', :to => 'my_books#map'
   get '/max_trocas', :to => 'my_books#max_trocas'
   get '/new_my_book', :to => 'my_books#new_my_book'
   post '/create_my_book', :to => 'my_books#create_my_book'

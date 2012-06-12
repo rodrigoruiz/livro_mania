@@ -5826,6 +5826,7 @@ body
   position:absolute;
   bottom:0px;
   right:0;
+  left: 710px;
   height:78px;
   width:250px;
   z-index: 1030;
@@ -5881,6 +5882,12 @@ body
 }
 
 .logout
+{
+  width:80px;
+  padding-left: 30px;
+}
+
+.contact
 {
   width:80px;
   padding-left: 30px;
@@ -6132,4 +6139,235 @@ body
 {
   font-size:15px;
   color: rgb(123,80,40);
+}
+
+.resultMyBook
+{
+  /*float: left;*/
+  width:672px;
+  padding: 10px;
+  height:170px;
+  border:1px solid #CCCCCC;
+  border-top:none;
+  margin-top:8px;
+  margin-right:8px;
+  
+  box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
+  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; /* IE8+ */
+  
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+
+  background-color: white;
+}
+
+.photoMyBook
+{
+  float:left;
+  width: 130px;
+  height: 170px;
+  background-color: red;
+}
+
+.ownerInformation
+{
+  float:left;
+  width:200px;
+  height:60px;
+  margin-left:5px;
+}
+
+.ownerName
+{
+  margin-top:5px;
+  margin-left: 5px;
+}
+
+.distance
+{
+  margin-top:5px;
+  margin-left: 5px;
+}
+
+.talkToOwner
+{
+  float:left;
+  width: 100px;
+  height: 20px;
+  margin-left:432px;
+  margin-top:91px;
+}
+
+.descricao
+{
+  margin-top:5px;
+  margin-left: 5px;
+  height:50px;
+}
+
+.livroBuscado
+{
+  width:672px;
+  padding: 10px;
+  height:210px;
+  border:1px solid #CCCCCC;
+  border-top:none;
+  margin-top:10px;
+  margin-bottom:30px;
+  margin-right:8px;
+  
+  box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
+  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; /* IE8+ */
+  
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+
+  background-color: white;
+}
+
+.bookInformation
+{
+  float:left;
+  width:200px;
+  height:60px;
+  margin-left:5px;
+}
+
+.camposLivro
+{
+  margin-top:5px;
+  margin-left:5px;
+}
+.tituloLivro
+{
+  font-size: 2em;
+  font-family: "Trebuchet MS";
+  margin-top:0px;
+  margin-bottom:15px;
+  margin-left:0px;
+}
+
+.edit
+{
+  height:650px;
+}
+
+.mensagem
+{
+  width:650px;
+  
+  padding: 10px;
+  border-top:none;
+  margin-top:8px;
+  margin-right:8px;
+  
+  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
+  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; /* IE8+ */
+  
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+
+  background-color: white; 
+}
+
+.contato
+{
+    width:650px;
+  
+  padding: 10px;
+  border-top:none;
+  margin-top:8px;
+  margin-right:8px;
+  
+  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
+  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; /* IE8+ */
+  
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+
+  background-color: white;
+}
+
+.maximo
+{
+  width:672px;
+  padding: 10px;
+  border:1px solid #CCCCCC;
+  border-top:none;
+  margin-top:10px;
+  margin-bottom:30px;
+  margin-right:8px;
+  
+  box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
+  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; /* IE8+ */
+  
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+
+  background-color: white;
+}
+
+.maxTrocas
+{
+  float:left;
+  width:200px;
+  height:60px;
+  margin-left:5px;
+}
+
+.titulos
+{
+  float:left;
+  width:672px;
+}
+
+.esquerda
+{
+  float:left;
+  width:200px;
+  margin-top:2px;
+}
+
+.direita
+{
+  float:left;
+  width:200px;
+  margin-top:2px;
+}
+
+.max
+{
+  float:left;
+  width: 200px;
+  margin-top:91px;
+}
+
+.perfil
+{
+  position: relative;
+  width:650px;
+}
+
+.profile
+{
+  float:left;
+  width:650px;
+}
+
+.novoLivro
+{
+  width:400px;
 }

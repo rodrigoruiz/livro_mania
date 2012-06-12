@@ -1,20 +1,38 @@
 <h1> Maximizando trocas... </h1>
 
+<div class="maximo">
+
+
 <table>
   <tr>
     <th> Nome do usuario </th>
+    <th> </th>
+    <th> </th>
+    <th> </th>
     <th> Trocas possiveis </th>
     <th> </th>
     <th> </th>
     <th> </th>
   </tr>
+<% if current_user.max_trocas(@users[0]) %>
+   <% @users.each do |user| %>
+    <tr>
+      
+      <% if current_user.max_trocas(user)!=0 %>
+      <td> <%= user.name %> </td> 
+      <td></td>
+      <td></td>
+      <td></td>
+      <td> <%= current_user.max_trocas(user) %> </td>
+      <td>
+      <a href="/user_profile/<%= user.id %>">falar com usuario</a></td>
+  </div>
+      <% end %>
+    </tr>
+   <% end %>
+  </table>
 
- <% @users.each do |user| %>
-  <tr>
-    <td> <%= user.name %> </td> 
-    <td> <%= current_user.max_trocas(user) %> </td> 
-  </tr>
- <% end %>
-</table>
-
-<br />
+<% else %>
+  Nenhum usuário pode efetuar trocas com você, tente adicionar mais livros!
+<% end %>
+</div>

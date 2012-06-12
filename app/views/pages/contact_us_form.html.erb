@@ -1,6 +1,8 @@
-<h3>Caso queira sugerir um novo livro, envie-nos um email: </h3>
-<%= form_tag(send_contact_us_path) do%>
-	Nome do livro: <%= text_field_tag :book_title %><br/>
-	Informações adicionais: <%= text_field_tag :addicional_information %><br/>
-	<%= submit_tag 'Enviar' %>
+<div class="contato">
+	<h3>Caso queira sugerir um novo livro, envie-nos um email: </h3> </br>
+	<%= form_tag(send_contact_us_path) do%>
+		Nome do livro: <%= text_field_tag :book_title %><br/>
+		Informações adicionais: <%= text_field_tag :addicional_information %><br/>
+		<%= submit_tag 'Enviar', :class => "btn btn-primary" %>
+</div>
 <% end %>

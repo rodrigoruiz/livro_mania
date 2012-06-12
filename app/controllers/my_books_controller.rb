@@ -7,10 +7,28 @@ class MyBooksController < ApplicationController
     @book = Book.find_by_title(params[:search_string])
     if @book
       @my_books = MyBook.find_all_by_book_id(@book.id)
+      @lat1 = current_user.latitude
+      @lon1 = current_user.longitude
+      @lat2 = current_user.latitude
+      @lon2 = current_user.longitude
       @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) } if user_signed_in?
     else
       redirect_to root_path, :alert => "Livro não encontrado."
     end
+  end
+
+  def mapa 
+      @lat1 = current_user.latitude
+      @lon1 = current_user.longitude
+      @lat2 = latitude
+      @lon2 = longitude
+  end
+
+  def map 
+      @lat1 = current_user.latitude
+      @lon1 = current_user.latitude
+      @lat2 = params[:usuario].latitude
+      @lon2 = params[:usuario].latitude
   end
   
   def max_trocas

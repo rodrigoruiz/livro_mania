@@ -1,24 +1,63 @@
-<h1>Buscando livro: <%= params[:search_string] %></h1>
-<br/>
+<div class="cabecalhoBusca">
+	Resultado da Busca por: <%= params[:search_string] %>
+</div>
+
 <% if @my_books %>
-<table>
-	<tr>
-		<th>Titulo do Livro</th>
-		<th>Dono do livro</th>
-		<% if user_signed_in? %> <th>Distância</th>
-		<th></th>
+<div class="livroBuscado">
+	<div class="tituloLivro"><%= @my_books.first.book.title %></div>
+	<div class="photoMyBook"></div>
+	<div class="bookInformation">
+		<div class="camposLivro">Autor: <%= @my_books.first.book.author %></div>
+		<div class="camposLivro">Ediçao: <%= @my_books.first.book.edition %></div>
+		<div class="camposLivro">Língua: <%= @my_books.first.book.language %></div>
+		<div class="camposLivro">ISBN: <%= @my_books.first.book.isbn %></div>
+		<div class="camposLivro">Páginas: <%= @my_books.first.book.pages %></div>
+	</div>
+</div>
+
+<% @my_books.each do |my_book| %>
+<div class="resultMyBook">
+	<div class="photoMyBook">
+		<% if my_book.photo %>
+<!-- 			<%= my_book.photo %> -->
+			<% else %>
+			image_tag("carinha")
+		<%end%>
+
+	</div>
+	<div class="ownerInformation">
+		<div class="ownerName">
+			Dono:
+			<%= my_book.owner.name %>
+		</div>
+		<div class="distance">
+			Distância: 
+			<% if user_signed_in? %>
+			<% if current_user.distance_to(my_book.owner)%>
+				<%= "%.2f" % current_user.distance_to(my_book.owner) %>
+			<% end %>
+				<% else %>
+				Logue-se para acessar a distância
+			<% end %>
+		</div>
+		<div class="descricao">
+			<%= my_book.additional_information %>
+		</div>
+		
+	</div>
+	
+	<div class="talkToOwner">
+	<% if user_signed_in? %>
+		<a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a>
 		<% end %>
-	</tr>
-	<% @my_books.each do |my_book| %>
-	<tr>
-		<td><%= my_book.book.title %></td>
-		<td><%= my_book.owner.name %></td>
-		<% if user_signed_in? %> <td><%= current_user.distance_to(my_book.owner) %></td>
-		<td><a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a></td>
-		<% end %>
-	</tr>
-	<% end %>
-</table>
+	</div>
+</div>
+
+<%= render :partial=>"mapa" %>
+
+<% end %>
+
+
 <% if user_signed_in? && @my_books.empty? %>
 	<br>
 	<b>Nenhum usuário possui este livro.</b>
