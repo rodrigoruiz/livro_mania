@@ -1,3 +1,4 @@
+<div class="signIn signUp">
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -26,6 +27,10 @@
   <div class='control-group'>
     <%= f.label 'Nova senha', :class => 'control-label' %>
     <div class='controls'><%= f.password_field :password, :autocomplete => "off", :placeholder => '**************' %></div>
+    <div class="info">
+      no mínimo 6 caracteres
+    </div>
+    <br/>
   </div>
   
   <div class='control-group'>
@@ -33,7 +38,7 @@
     <div class='controls'><%= f.password_field :password_confirmation, :placeholder => '**************' %></div>
   </div>
   
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", :class=>"btn" %></div>
 <% end %>
 
 <%= render "links" %>

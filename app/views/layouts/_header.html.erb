@@ -6,8 +6,8 @@
               <li class='<%= 'active' if request.fullpath == root_path %>'><%= link_to 'Home', root_path %></li>
               <li class='<%= 'active' if request.fullpath == messages_path %>'><%= link_to 'Mensagens', messages_path %></li>
               <li class='<%= 'active' if request.fullpath == edit_user_registration_path %>'><%= link_to 'Editar conta', edit_user_registration_path %></li>
-              <li class='<%= 'active' if request.fullpath == contact_us_path %>'><%= link_to 'Fale conosco', contact_us_path %></li>
-              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+              <li class='logout <%= 'active' if request.fullpath == contact_us_path %>'><%= link_to 'Fale conosco', contact_us_path %></li>
+              <li class='logout <%= 'active' if request.fullpath == contact_us_path %>'><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
           </ul>
         </div>
   </div>
