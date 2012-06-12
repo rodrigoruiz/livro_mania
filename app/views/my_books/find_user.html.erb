@@ -1,0 +1,21 @@
+<h1>Buscando Usuario: <%= params[:search_string2] %></h1>
+<br/>
+<% if @users %>
+<table>
+	<tr>
+		<th>Nome </th>
+		<th></th>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= user.name %></td>
+		<td></td>
+		<% if user_signed_in? %> 
+			<td><a href="/user_profile/<%= user.id %>">falar com usuario</a></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+<% end %>
+
+<% if !user_signed_in? %><h3> Para começar a trocar, se cadastre e aproveite </h3><% end %>

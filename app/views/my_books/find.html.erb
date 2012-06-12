@@ -11,11 +11,11 @@
 	</tr>
 	<% @my_books.each do |my_book| %>
 	<tr>
-		<td><%= my_book.book.title %></td>
-		<td><%= my_book.owner.name %></td>
-		<% if user_signed_in? %> <td><%= current_user.distance_to(my_book.owner) %></td>
-		<td><a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a></td>
-		<% end %>
+			<td><%= my_book.book.title %></td>
+			<td><%= my_book.owner.name %></td>
+			<% if user_signed_in? %> <td><%= current_user.distance_to(my_book.owner) %></td>
+			<td><a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a></td>
+			<% end %>
 	</tr>
 	<% end %>
 </table>

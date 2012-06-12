@@ -1,0 +1,34 @@
+<h1> Selecione as opções avançadas de busca </h1>
+
+<table>
+	<tr>
+		<h2> Procura Usuário </h2>
+		<%= form_tag "/find_user" do %>
+	    	<%= text_field_tag :search_string2 , nil, :placeholder => 'Nome do Usuario' %>
+	    	<%= submit_tag "Busca Usuario" %>
+	    	<br> <%= check_box_tag :exato, 1, false %> Nome Exato </br>
+		  <% end %>
+	</tr>
+		<h2> Procura Livro (Avançada) </h2>
+	  	<div class="girard">
+		
+		  	<%= form_tag "/find_advanced" do %>
+		    	<%= text_field_tag :search_string3 , nil, :placeholder => 'Palavra Buscada' %>
+		    	<%= submit_tag "Busca Livro" %>
+				<h3> Opções </h3>
+				<label for = :opcao>  </label>
+				<br><%= radio_button_tag :opcao, 'Autor', true %> Autor </br>
+		    	<br><%= radio_button_tag :opcao, 'Titulo' %> Título </br>
+		    	<% if user_signed_in? %>
+			    	<br><%= check_box_tag :filtro, 'filtro' %> Filtrar até   
+			    	<%= text_field_tag :disFilter, '50', :maxlength=>4, :size=>3 %></br>
+		    	<% end %>
+		    	<h3> Línguas </h3>
+		    	<br> <%= check_box_tag :Portugues, 1, true %> Portugues </br>
+		    	<br> <%= check_box_tag :Ingles, 2, false %> Ingles </br>
+		    	<br> <%= check_box_tag :Outras, 3, false %> Outras </br>
+	    	<% end %>
+			
+    	</div>
+
+	

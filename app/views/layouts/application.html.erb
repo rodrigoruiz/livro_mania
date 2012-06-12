@@ -18,8 +18,11 @@
         <%= form_tag "/find" do %>
           <%= autocomplete_field_tag :search_string, '', autocomplete_book_title_pages_path, :class => 'fieldSearch', :placeholder => 'Digite sua busca' %>
           <%= submit_tag "Ok", :class => 'btn-primary btnBusca' %>
+          <a href="/advanced_search">busca_avancada</a>
          <% end %>
       </div>
+
+
 
     </div>
     <div class='corpo'>

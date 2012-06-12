@@ -1,0 +1,45 @@
+<h1> Busca Avançada! </h1>
+    <% if(params[:opcao]=='Autor') %>
+ 		<h1> Buscando Livros Por Autor <%= params[:search_string3] %> </h1>   	
+    <% else %>
+    	<h1> Buscando Livros Por Titulo <%= params[:search_string3] %> </h1>   	
+    <% end %>
+<br/>
+<table>
+
+<% if @my_books %>
+	<tr>
+		<th> Titulo do Livro </th>
+		<% if(params[:opcao]=='Autor') %>
+			<th> Autor </th>
+		<% end %>
+		<th> Dono do livro </th>
+		<% if user_signed_in? %> <th>Distância</th>
+		<th></th>
+		<% end %>
+	</tr>
+	<% @my_books.each do |my_book| %>
+	<tr>
+		<% if !(my_book.owner.id == current_user.id) %>	
+			<td> <%= my_book.book.title %> </td>
+			<% if(params[:opcao]=='Autor') %>
+				<td> <%= my_book.book.author %> </td>
+			<% end %>
+			<td><%= my_book.owner.name %></td>
+			<% if user_signed_in? %> <td><%= current_user.distance_to(my_book.owner).round(0.01) %></td>
+			<td><a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a></td>
+			<% end %>
+		<% end %>
+	</tr>
+	<% end %>
+<% else %>
+	<tr>
+		<td>	Não encontrado.	</td>
+	</tr>
+<% end %>
+
+</table>
+
+	<% if !user_signed_in? %>
+		<h3> Para começar a trocar, se cadastre e aproveite </h3>
+	<% end %>

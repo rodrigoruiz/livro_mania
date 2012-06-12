@@ -12,6 +12,41 @@ class MyBooksController < ApplicationController
       redirect_to root_path, :alert => "Livro não encontrado."
     end
   end
+
+  def find_user
+    @users = User.find_all_by_name(params[:search_string2])
+    if !params[:exato]
+      @users = User.find(:all)
+      @users.delete_if{|user| !(user.name.include? params[:search_string2])}   
+    end
+    @users.sort_by! { |user| current_user.distance_to(user) } if user_signed_in?
+  end
+  
+  def find_advanced
+    if(params[:opcao]=='Autor')
+      @my_books = MyBook.find(:all)
+      @my_books.delete_if{|my_book| !(my_book.author.include? params[:search_string3])}   
+    end
+    if(params[:opcao]=='Titulo')
+      @my_books = MyBook.find(:all)
+      @my_books.delete_if{|my_book| !(my_book.title.include? params[:search_string3])}   
+    end
+
+    if params[:filtro]
+        @my_books.delete_if{|my_book| (current_user.distance_to(my_book.owner) > params[:disFilter].to_f)}   
+    end
+
+    if !params[:Portugues]
+        @my_books.delete_if{|my_book| (my_book.language == "Português")}   
+    end
+    if !params[:Ingles]
+        @my_books.delete_if{|my_book| (my_book.language == "Inglês")}   
+    end
+    if !params[:Outras]
+        @my_books.delete_if{|my_book| (my_book.language != "Inglês" && my_book.language != "Português")}   
+    end
+    
+  end    
   
   def max_trocas
     @users = User.find(:all)
