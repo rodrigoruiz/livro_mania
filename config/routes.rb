@@ -4,9 +4,17 @@ LivroMania::Application.routes.draw do
   root :to => 'pages#index'
   
   post '/find', :to => 'my_books#find'
+
   post '/mapa', :to => 'my_books#mapa'
   post '/map', :to => 'my_books#map'
+
+  post '/find_user', :to => 'my_books#find_user'
+  post '/find_advanced', :to => 'my_books#find_advanced'
+  
   get '/max_trocas', :to => 'my_books#max_trocas'
+  
+  get '/advanced_search', :to => 'my_books#advanced_search'
+
   get '/new_my_book', :to => 'my_books#new_my_book'
   post '/create_my_book', :to => 'my_books#create_my_book'
   delete '/remove_my_book/:id', :to => 'my_books#remove_my_book'
