@@ -1,39 +1,43 @@
 <div class="perfil">
-<div class="mensagem">
-<h2><%= @user.name %></h2>
-<h3>Livros disponibilizados para troca</h3>
-<% @my_books.each do |my_book| %>
-  	  Livro: <%= my_book.title %>
-  	  Peso: <%= my_book.weight %>
-  	  Informações adicionais: <%= my_book.additional_information %>
-  	  Imagem: <%= image_tag my_book.photo.url(:thumb) %>
-   	  <br/>
-<% end %>
-<br />
-<h3>Livros desejados</h3>
-<% @desired_books.each do |book| %>
-  	  <%= book.title %>
-  	  <br/>
-<% end %>
-<br />
-<h3>Mensagem:</h3>
-<%= form_for(@message) do |f| %>
+  <div class="mensagem">
+    <h2><%= @user.name %></h2>
+    
+    <h3>Livros disponibilizados para troca</h3>
+    <% @my_books.each do |my_book| %>
+      Livro: <%= my_book.title %><br/>
+      Peso: <%= my_book.weight %><br/>
+      Informações adicionais: <%= my_book.additional_information %><br/>
+      Imagem: <%= image_tag my_book.photo.url(:thumb) %>
+      <hr/>
+    <% end %>
+    <br/>
+    
+    <h3>Livros desejados</h3>
+    <% @desired_books.each do |book| %>
+      <%= book.title %><br/>
+    <% end %>
+    <br/>
+    
+    <h3>Mensagem:</h3>
+    <%= form_for(@message) do |f| %>
       <div><%= f.text_area :body, :rows => '3' %></div>
       <div><%= f.hidden_field :sender_id, :value => current_user.id %></div>
       <div><%= f.hidden_field :receiver_id, :value => @user.id %></div>
       <div><%= f.submit "Enviar" %></div>
-<% end %>
-<br/>
-<h3>Confiabilidade:</h3>
-<div id='average_rating'>
-  <%= render :partial => 'pages/rate' %>
-</div>
-<br/>
-<%= form_for(@rating, :url => rate_path, :remote => true) do |f| %>
+    <% end %>
+    <br/>
+  
+    <h3>Confiabilidade:</h3>
+    <div id='average_rating'>
+      <%= render :partial => 'pages/rate' %>
+    </div>
+    <br/>
+    
+    <%= form_for(@rating, :url => rate_path, :remote => true) do |f| %>
       <div><%= f.hidden_field :evaluator_id, :value => current_user.id %></div>
       <div><%= f.hidden_field :rated_user_id, :value => @user.id %></div>
       <div><%= f.submit 'Bom', :name => :thumbs_up, :class=>"btn btn-primary" %>
       <%= f.submit 'Ruim', :name => :thumbs_down, :class=>"btn btn-primary" %></div>
-<% end %>
-</div>
+    <% end %>
+  </div>
 </div>
