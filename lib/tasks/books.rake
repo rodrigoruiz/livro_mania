@@ -12,5 +12,5 @@ task :books => :environment do
 end
 
 task :reset_db => [:environment, 'db:drop', 'db:create', 'db:migrate', :books, 'db:seed'] do
-  desc 'run tasls: db:drop, db:migrate, books, db:seed'
+  desc 'run tasks: db:drop, db:migrate, books, db:seed'
 end
