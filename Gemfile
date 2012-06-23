@@ -5,7 +5,13 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 
 
 # Gems used only for assets and not required
@@ -32,18 +38,12 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
- gem 'anjlab-bootstrap-rails', '>= 2.0.3.2', :require => 'bootstrap-rails'
-
+gem 'anjlab-bootstrap-rails', '>= 2.0.3.2', :require => 'bootstrap-rails'
 gem 'geocoder'
-
 gem 'hpricot'
-
 gem 'devise', '2.0.4'
-
 gem 'paperclip'
-
 #gem 'simple_autocomplete'
-
 gem 'rails3-jquery-autocomplete'
-
 gem 'jquery-ui-rails'
+gem 'heroku'
