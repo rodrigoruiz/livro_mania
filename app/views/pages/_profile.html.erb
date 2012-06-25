@@ -2,10 +2,10 @@
       <div class='meusLivros'> 	
         <h3>Meus livros</h3>
       	<% @my_books.each do |my_book| %>
-        <div class='item'>
-      	  <div class='titulo'><%= my_book.title %></div>
-      	  <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete , :class => 'btn btn-mini btn-danger pull-right floatleft'%>
-        </div>
+          <div class='item'>
+      	    <div class='titulo'><%= my_book.title %></div>
+      	    <%= link_to 'Remover', "/remove_my_book/#{my_book.id}", :method => :delete , :class => 'btn btn-mini btn-danger pull-right floatleft'%>
+          </div>
       	<% end %>
       	
     	  <br/>

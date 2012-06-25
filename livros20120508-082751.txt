@@ -185,7 +185,7 @@
   - 01 / 2005
   - Português
   - ! 'Sextante / Gmt '
-- - ! "Inovação Em Modelos de Negócios \x96 Business Model Generation"
+- - ! "Inovação Em Modelos de Negócios - Business Model Generation"
   - Osterwalder,  Alexander
   - '9788576085508'
   - '300'
@@ -419,7 +419,7 @@
   - 1 / 2012
   - Português
   - ! 'Campus '
-- - ! "Steve Jobs \x96 o Estilo de Liderança Para Uma Nova Geração"
+- - ! "Steve Jobs - o Estilo de Liderança Para Uma Nova Geração"
   - Elliot, Jay
   - '9788576358909'
   - '256'

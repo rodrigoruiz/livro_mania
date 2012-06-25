@@ -15,14 +15,14 @@
 	</div>
 
 <% @my_books.each do |my_book| %>
+<<<<<<< HEAD
 <div class="resultMyBook">
 	<div class="photoMyBook">
-		<% if my_book.photo %>
-<!-- 			<%= my_book.photo %> -->
-			<% else %>
-			<%= image_tag("carinha.png") %>
-		<%end%>
-
+		<% if my_book.photo.url.include?('missing') %>
+  	    	<%= image_tag('no-image.png', :size => '130x170') %>
+  	  	<% else %>
+        	<%= image_tag(my_book.photo.url, :size => '130x170') %>
+      	<% end %>
 	</div>
 	<div class="ownerInformation">
 		<div class="ownerName">
@@ -62,13 +62,14 @@
 <% end %>
 
 <% if user_signed_in? && @my_books.empty? %>
-	<br>
+	<br/>
 	<b>Nenhum usuário possui este livro.</b>
 	<%= link_to "Avise-me quando houver", add_missing_book_notification_path(@book.id), :method=>"post" %>
 <% end %>
 
 <% if !user_signed_in? %><h3> Para começar a trocar, se cadastre e aproveite </h3><% end %>
 
-	<% if @my_books.empty? %>
+<
+<% if @my_books.empty? %>
   Não encontrado.
 <% end %>

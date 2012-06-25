@@ -7,11 +7,14 @@ class MyBooksController < ApplicationController
     @book = Book.find_by_title(params[:search_string])
     if @book
       @my_books = MyBook.find_all_by_book_id(@book.id)
-      @lat1 = current_user.latitude
-      @lon1 = current_user.longitude
-      @lat2 = current_user.latitude
-      @lon2 = current_user.longitude
-      
+
+      @my_books.delete_if { |my_book| my_book.owner == current_user }
+      if user_signed_in?
+        @lat1 = current_user.latitude
+        @lon1 = current_user.longitude
+        @lat2 = current_user.latitude
+        @lon2 = current_user.longitude
+      end
       @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) } if user_signed_in?
     else
       redirect_to root_path, :alert => "Livro não encontrado."
@@ -28,7 +31,7 @@ class MyBooksController < ApplicationController
       @lat2 = User.find(params[:user_id]).latitude
       @lon2 = User.find(params[:user_id]).longitude
   end
-
+  
   def find_user
     @users = User.find_all_by_name(params[:search_string2])
     if !params[:exato]
