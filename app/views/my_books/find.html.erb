@@ -14,9 +14,11 @@
 <% @my_books.each do |my_book| %>
   <div class="resultMyBook">
   	<div class="photoMyBook">
-  		<% if my_book.photo %>
-        <%= image_tag(my_book.photo.url) %>
-  		<% end %>
+  	  <% if my_book.photo.url.include?('missing') %>
+  	    <%= image_tag('no-image.png', :size => '130x170') %>
+  	  <% else %>
+        <%= image_tag(my_book.photo.url, :size => '130x170') %>
+      <% end %>
   	</div>
   	<div class="ownerInformation">
   		<div class="ownerName">

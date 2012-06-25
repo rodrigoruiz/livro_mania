@@ -7,6 +7,7 @@ class MyBooksController < ApplicationController
     @book = Book.find_by_title(params[:search_string])
     if @book
       @my_books = MyBook.find_all_by_book_id(@book.id)
+      @my_books.delete_if { |my_book| my_book.owner == current_user }
       if user_signed_in?
         @lat1 = current_user.latitude
         @lon1 = current_user.longitude
