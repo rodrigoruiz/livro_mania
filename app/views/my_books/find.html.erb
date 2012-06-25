@@ -61,8 +61,8 @@
 
 	<div id="map_<%=User.find(my_book.owner.id).id%>" class="map"></div>
 
-</div>
 
+  </div>
 <% end %>
 
 <% if user_signed_in? && @my_books.empty? %>
@@ -73,6 +73,4 @@
 
 <% if !user_signed_in? %><h3> Para começar a trocar, se cadastre e aproveite </h3><% end %>
 
-<% if @my_books.empty? %>
-  Não encontrado.
-<% end %>
+<% if @my_books.empty? %>Não encontrado.<% end %>
