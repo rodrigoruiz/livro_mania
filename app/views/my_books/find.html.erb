@@ -2,19 +2,17 @@
 	Resultado da Busca por: <%= params[:search_string] %>
 </div>
 
-<% if @my_books %>
-
-<div class="livroBuscado">
-	<div class="tituloLivro"><%= @my_books.first.book.title %></div>
-	<div class="photoMyBook"></div>
-	<div class="bookInformation">
-		<div class="camposLivro">Autor: <%= @my_books.first.book.author %></div>
-		<div class="camposLivro">Ediçao: <%= @my_books.first.book.edition %></div>
-		<div class="camposLivro">Língua: <%= @my_books.first.book.language %></div>
-		<div class="camposLivro">ISBN: <%= @my_books.first.book.isbn %></div>
-		<div class="camposLivro">Páginas: <%= @my_books.first.book.pages %></div>
+	<div class="livroBuscado">
+		<div class="tituloLivro"><%= @book.title %></div>
+		<div class="photoMyBook"></div>
+		<div class="bookInformation">
+			<div class="camposLivro">Autor:   <%= @book.author %>   </div>
+			<div class="camposLivro">Ediçao:  <%= @book.edition %>  </div>
+			<div class="camposLivro">Língua:  <%= @book.language %> </div>
+			<div class="camposLivro">ISBN:    <%= @book.isbn %>     </div>
+			<div class="camposLivro">Páginas: <%= @book.pages %>    </div>
+		</div>
 	</div>
-</div>
 
 <% @my_books.each do |my_book| %>
 <div class="resultMyBook">
@@ -22,7 +20,7 @@
 		<% if my_book.photo %>
 <!-- 			<%= my_book.photo %> -->
 			<% else %>
-			image_tag("carinha")
+			<%= image_tag("carinha.png") %>
 		<%end%>
 
 	</div>
@@ -31,6 +29,7 @@
 			Dono:
 			<%= my_book.owner.name %>
 		</div>
+
 		<div class="distance">
 			Distância: 
 			<% if user_signed_in? %>
@@ -41,24 +40,24 @@
 				Logue-se para acessar a distância
 			<% end %>
 		</div>
+
 		<div class="descricao">
 			<%= my_book.additional_information %>
 		</div>
-		<%= form_tag "/map" do %>
-			<%= hidden_field_tag 'user_id', my_book.owner.id %>
-			<%= submit_tag 'Visualizar no mapa', :class => 'btn-primary btnBusca searchButton', :onload => 'initialize()' %>
-		<% end %>
-		
+
+		<div class="talkToOwner">
+			<% if user_signed_in? %>
+				<a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a>
+			<% end %>
+		</div>
+
+	
+		<%= button_to_function "Visualizar no mapa", "initialize(#{User.find(my_book.owner.id).id},#{current_user.latitude},#{current_user.longitude},#{User.find(my_book.owner.id).latitude},#{User.find(my_book.owner.id).longitude})", :class => "visualizar btn btn-primary" %>
+
 	</div>
 	
-	<div class="talkToOwner">
-	<% if user_signed_in? %>
-		<a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a>
-		<% end %>
-	</div>
+	<div id="map_<%=User.find(my_book.owner.id).id%>" class="map"></div>
 </div>
-
-<%= render :partial=>"mapa" %>
 
 <% end %>
 
@@ -70,8 +69,6 @@
 
 <% if !user_signed_in? %><h3> Para começar a trocar, se cadastre e aproveite </h3><% end %>
 
-<% else %>
-	<tr>
-		<td>Não encontrado.</td>
-	</tr>
+	<% if @my_books.empty? %>
+  Não encontrado.
 <% end %>

@@ -6176,7 +6176,7 @@ body
 {
   float:left;
   width:200px;
-  height:60px;
+  height:170px;
   margin-left:5px;
 }
 
@@ -6194,11 +6194,8 @@ body
 
 .talkToOwner
 {
-  float:left;
-  width: 100px;
-  height: 20px;
-  margin-left:432px;
-  margin-top:91px;
+  margin-top:5px;
+  margin-left: 5px;
 }
 
 .descricao
@@ -6390,4 +6387,17 @@ body
   -moz-border-radius:1em;
 
   background-color: white; 
+}
+
+.map
+{
+  width:333px;
+  height:170px;
+  margin-left:10px;
+}
+
+.visualizar
+{
+  margin-top:5px;
+  margin-left: 5px;
 }
