@@ -21,7 +21,7 @@
 				<br><%= radio_button_tag :opcao, 'Autor', true %> Autor </br>
 		    	<br><%= radio_button_tag :opcao, 'Titulo' %> Título </br>
 		    	<% if user_signed_in? %>
-			    	<br><%= check_box_tag :filtro, 'filtro' %> Filtrar até   
+			    	<br><%= check_box_tag :filtro, 'filtro' %> Filtrar até (Km)  
 			    	<%= text_field_tag :disFilter, '50', :maxlength=>4, :size=>3 %></br>
 		    	<% end %>
 		    	<h3> Línguas </h3>

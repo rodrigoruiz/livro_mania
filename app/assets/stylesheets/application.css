@@ -5989,97 +5989,6 @@ body
   margin-top:9px;
 }
 
-/*.passo1
-{
-  float: left;
-  width:444px;
-  height:200px;
-  padding: 10px;
-  border:1px solid #CCCCCC;
-  border-top:none;
-  margin-right:8px;
- 
-  box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
-  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; 
-  
-  -webkit-border-radius:1em;
-  -moz-border-radius:1em;
-
-  background-color: white; 
-}
-
-.passo2
-{
-  float: left;
-  width:444px;
-  height:200px;
-  margin-top:70px;
-  padding: 10px;
-  border:1px solid #CCCCCC;
-  border-top:none;
-  margin-right:8px;
-  
-  box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
-  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)";
-  
-  -webkit-border-radius:1em;
-  -moz-border-radius:1em;
-
-  background-color: white; 
-}
-
-.passo3
-{
-  float: left;
-  width:444px;
-  height:200px;
-  margin-top:25px;
-  padding: 10px;
-  border:1px solid #CCCCCC;
-  border-top:none;
-  margin-right:8px;
-  
-  box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
-  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; 
-  
-  -webkit-border-radius:1em;
-  -moz-border-radius:1em;
-
-  background-color: white; 
-}
-
-.passo4
-{
-  float: left;
-  width:444px;
-  height:200px;
-  margin-top:100px;
-  padding: 10px;
-  border:1px solid #CCCCCC;
-  border-top:none;
-  margin-right:8px;
-  
-  box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
-  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)";
-  
-  -webkit-border-radius:1em;
-  -moz-border-radius:1em;
-
-  background-color: white; 
-}*/
-
 .passos
 {
   background-image: url(design.png);
@@ -6112,7 +6021,7 @@ body
 
 .signUp
 {
-  height:570px;
+  height:600px;
 }
 
 .textFill
@@ -6123,16 +6032,19 @@ body
 .remember
 {
   position: relative;
+  width:50px;
+  height:50px;
 }
 
 .esquerda
 {
-  float:left;
+  
 }
 
-.direita
+.rememberdireita
 {
   margin-left: 20px;
+  width:90px;
 }
 
 .info
@@ -6144,9 +6056,9 @@ body
 .resultMyBook
 {
   /*float: left;*/
-  width:672px;
+  width:800px;
   padding: 10px;
-  height:170px;
+  height:275px;
   border:1px solid #CCCCCC;
   border-top:none;
   margin-top:8px;
@@ -6172,8 +6084,8 @@ body
 .ownerInformation
 {
   float:left;
-  width:200px;
-  height:170px;
+  width:250px;
+  height:275px;
   margin-left:5px;
 }
 
@@ -6191,7 +6103,7 @@ body
 
 .talkToOwner
 {
-  margin-top:5px;
+  margin-top:15px;
   margin-left: 5px;
 }
 
@@ -6388,13 +6300,26 @@ body
 
 .map
 {
-  width:333px;
-  height:170px;
+  width:403px;
+  height:277px;
   margin-left:10px;
 }
 
 .visualizar
 {
-  margin-top:5px;
+  margin-top:15px;
   margin-left: 5px;
+}
+
+.esquerda
+{
+  float: left;
+  width:397px;
+  height:275px;
+}
+
+.links
+{
+  width:200px;
+  height:36px;
 }
