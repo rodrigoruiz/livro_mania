@@ -15,53 +15,47 @@
 	</div>
 
 <% @my_books.each do |my_book| %>
-
-<div class="resultMyBook">
-	<div class="esquerda">
-		<div class="photoMyBook">
-			<% if my_book.photo.url.include?('missing') %>
-	  	    	<%= image_tag('no-image.png', :size => '130x170') %>
-	  	  	<% else %>
-	        	<%= image_tag(my_book.photo.url, :size => '130x170') %>
-	      	<% end %>
-
-	      	<div class="talkToOwner">
-				<% if user_signed_in? %>
-					<a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a>
-				<% end %>
-			</div>
-
-		
-			<%= button_to_function "Visualizar no mapa", "initialize(#{User.find(my_book.owner.id).id},#{current_user.latitude},#{current_user.longitude},#{User.find(my_book.owner.id).latitude},#{User.find(my_book.owner.id).longitude})", :class => "visualizar btn btn-primary" %>
-		</div>
-
-		<div class="ownerInformation">
-			<div class="ownerName">
-				Dono:
-				<%= my_book.owner.name %>
-			</div>
-
-			<div class="distance">
-				Distância: 
-				<% if user_signed_in? %>
-				<% if current_user.distance_to(my_book.owner)%>
-					<%= "%.2f" % current_user.distance_to(my_book.owner) %> Km
-				<% end %>
+  <div class="resultMyBook">
+	  <div class="esquerda">
+		  <div class="photoMyBook">
+			  <% if my_book.photo.url.include?('missing') %>
+	  	    <%= image_tag('no-image.png', :size => '130x170') %>
+	  	  <% else %>
+	        <%= image_tag(my_book.photo.url, :size => '130x170') %>
+	      <% end %>
+	      
+	      <div class="talkToOwner">
+				  <% if user_signed_in? %>
+					  <a href="/user_profile/<%= my_book.owner.id %>">falar com usuario</a>
+				  <% end %>
+			  </div>
+			  
+			  <%= button_to_function("Visualizar no mapa", "initialize(#{User.find(my_book.owner.id).id},#{current_user.latitude},#{current_user.longitude},#{User.find(my_book.owner.id).latitude},#{User.find(my_book.owner.id).longitude})", :class => "visualizar btn btn-primary") if user_signed_in? %>
+		  </div>
+		  
+		  <div class="ownerInformation">
+			  <div class="ownerName">
+				  Dono: <%= my_book.owner.name %>
+			  </div>
+			  
+			  <div class="distance">
+				  Distância: 
+				  <% if user_signed_in? %>
+				    <% if current_user.distance_to(my_book.owner)%>
+					    <%= "%.2f" % current_user.distance_to(my_book.owner) %> Km
+				    <% end %>
 					<% else %>
-					Logue-se para acessar a distância
-				<% end %>
-			</div>
-
-			<div class="descricao">
-				<%= truncate(my_book.additional_information, :length => 450, :separator => ' ') %>
-			</div>
-
-		</div>
-	</div>	
-
-	<div id="map_<%=User.find(my_book.owner.id).id%>" class="map"></div>
-
-
+					  Logue-se para acessar a distância
+				  <% end %>
+			  </div>
+        
+  			<div class="descricao">
+  				<%= truncate(my_book.additional_information, :length => 450, :separator => ' ') %>
+  			</div>
+		  </div>
+	  </div>
+	  
+    <div id="map_<%=User.find(my_book.owner.id).id%>" class="map"></div>
   </div>
 <% end %>
 
