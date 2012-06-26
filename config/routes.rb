@@ -20,6 +20,7 @@ LivroMania::Application.routes.draw do
   post '/add_desired_book', :to => 'my_books#add_desired_book'
   delete '/remove_desired_book/:id', :to => 'my_books#remove_desired_book'
   post '/add_missing_book_notification/:book_id', :to => 'my_books#add_missing_book_notification', :as => 'add_missing_book_notification'
+  
   get '/contact_us', :to=>'pages#contact_us_form'
   post '/send_contact_us', :to=>'pages#send_contact_us_email'
 
@@ -28,6 +29,8 @@ LivroMania::Application.routes.draw do
   
   get '/user_profile/:id', :to => 'pages#user_profile'
   post '/rate', :to => 'pages#rate'
+  
+  get '/address_from_cep_for_sign_up', :to => 'pages#address_from_cep_for_sign_up'
   
   resources :pages do
     get :autocomplete_book_title, :on => :collection
