@@ -9,7 +9,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(:email => 'halbuquerquevieira@gmail.com', :password => '123456', :password_confirmation => '123456',
-            :name => 'Heitor Vieira', :cpf => '067.704.724-06', :cep => '50680-170')
+            :name => 'Heitor Vieira', :cpf => '067.704.724-06', :cep => '50771-320')
 
 User.create(:email => 'aderomir@gmail.com', :password => '123456', :password_confirmation => '123456',
             :name => 'Antônio Deromir', :cpf => '044.284.103-52', :cep => '60430-580')

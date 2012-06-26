@@ -16,8 +16,11 @@ class MyBooksController < ApplicationController
         @lat2 = current_user.latitude
         @lon2 = current_user.longitude
       end
-
-      @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) } if user_signed_in?
+      
+      if user_signed_in?
+        @my_books.delete_if { |my_book| my_book.owner.latitude.nil? }
+        @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) }
+      end
     else
       redirect_to root_path, :alert => "Livro não encontrado."
     end
