@@ -21,7 +21,7 @@
 	</tr>
 	<% @my_books.each do |my_book| %>
 	<tr>
-		<% if !(my_book.owner.id == current_user.id) %>	
+		<% if !user_signed_in? || (user_signed_in? && !(my_book.owner.id == current_user.id)) %>	
 			<td> <%= my_book.book.title %> </td>
 			<% if(params[:opcao]=='Autor') %>
 				<td> <%= my_book.book.author %> </td>
