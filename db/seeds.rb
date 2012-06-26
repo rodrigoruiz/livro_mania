@@ -23,6 +23,16 @@ User.create(:email => 'luamaralalmeida@gmail.com', :password => 'luisaa', :passw
 User.create(:email => 'cassiokendi@gmail.com', :password => 'cassio', :password_confirmation => 'cassio',
             :name => 'Cassio', :cpf => '383.732.868-61', :cep => '12243-750')
 
+User.create(:email => 'eadrgv@gmail.com', :password => '123456', :password_confirmation => '123456',
+            :name => 'Luis', :cpf => '687.304.407-50', :cep => '13343-750')
+
+User.create(:email => 'ehbf@gmail.com', :password => '123456', :password_confirmation => '123456',
+            :name => 'Mauricio', :cpf => '272.154.362-84', :cep => '50765-171')
+
+User.create(:email => 'rstf@gmail.com', :password => '123456', :password_confirmation => '123456',
+            :name => 'Gustavo', :cpf => '877.942.536-40', :cep => '12363-121')
+
+
 Message.create(:body => 'Oi, quer me dar aula do Jackson?', :sender_id => 1, :receiver_id => 2)
 Message.create(:body => 'Pode ser, mas você faz o trabalho do Clovis', :sender_id => 2, :receiver_id => 1)
 Message.create(:body => 'Ah, e tem que fazer bem feito!', :sender_id => 2, :receiver_id => 1)
