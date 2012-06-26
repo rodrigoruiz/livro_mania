@@ -54,4 +54,9 @@ class PagesController < ApplicationController
     flash[:notice]="O livro #{book_title} foi solicitado."    
     redirect_to root_path
   end
+  
+  def address_from_cep_for_sign_up
+    address = User.address_from_cep(params[:cep])
+    render :text => address
+  end
 end

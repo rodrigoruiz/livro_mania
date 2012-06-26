@@ -8,9 +8,7 @@
 
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     
-    <script type="text/javascript"
-    src="http://maps.google.com/maps/api/js?sensor=true">
-    </script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
     <script type="text/javascript">
     var directionsDisplay;
@@ -47,11 +45,9 @@
   <body>
     <div class='header'>
       <%= link_to '', root_path, :class=>'logo' %>
-
-      <div class='boxUser'>
-            <%= render 'layouts/header' %>
-      </div>
-
+      
+      <div class='boxUser'><%= render 'layouts/header' %></div>
+      
       <div class='search'>
         <div class="labelSearch">
           busca</br>
@@ -60,20 +56,17 @@
         
         <%= form_tag "/find" do %>
           <%= autocomplete_field_tag :search_string, '', autocomplete_book_title_pages_path, :class => 'fieldSearch', :placeholder => 'Digite sua busca' %>
-
+          
           <%= submit_tag "Ok", :class => 'btn-primary btnBusca searchButton' %>
-         <% end %>
+        <% end %>
       </div>
-
-
-
     </div>
+    
     <div class='corpo'>
       <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
       <% if alert %><p class='alert alert-error'><%= alert %></p><% end %>
-
+      
       <%= yield %>
-
     </div>
   </body>
 </html>

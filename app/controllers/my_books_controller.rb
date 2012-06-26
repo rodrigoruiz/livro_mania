@@ -6,6 +6,7 @@ class MyBooksController < ApplicationController
   def find
     @book = Book.find_by_title(params[:search_string])
     if @book
+
       @my_books = MyBook.find_all_by_book_id(@book.id)
       
       @my_books.delete_if { |my_book| my_book.owner == current_user }
@@ -15,7 +16,11 @@ class MyBooksController < ApplicationController
         @lat2 = current_user.latitude
         @lon2 = current_user.longitude
       end
-      @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) } if user_signed_in?
+      
+      if user_signed_in?
+        @my_books.delete_if { |my_book| my_book.owner.latitude.nil? }
+        @my_books.sort_by! { |my_book| current_user.distance_to(my_book.owner) }
+      end
     else
       redirect_to root_path, :alert => "Livro não encontrado."
     end

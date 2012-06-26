@@ -54,6 +54,24 @@ class User < ActiveRecord::Base
     [x,y].min
   end
   
+  def self.address_from_cep(cep)
+    url = "http://feliperoberto.com.br/api/correios/cep.php?cep=#{cep}"
+    str = Hpricot(open(url)).to_s()
+    list = str.split('"')
+    
+    street_list = list[3].split('-')
+    
+    list[3] = street_list[0]
+    
+    User.correct(list[3])
+    User.correct(list[7])
+    User.correct(list[15])
+    User.correct(list[19])
+
+    address = list[3]+","+list[7]+","+list[15]+","+list[19] if list[3] && list[7] && list[15]
+    address
+  end
+  
   private
     def fill_address
       url = "http://feliperoberto.com.br/api/correios/cep.php?cep="+self.cep
@@ -64,15 +82,15 @@ class User < ActiveRecord::Base
       
       list[3] = street_list[0]
       
-      correct(list[3])
-      correct(list[7])
-      correct(list[15])
-      correct(list[19])
+      User.correct(list[3])
+      User.correct(list[7])
+      User.correct(list[15])
+      User.correct(list[19])
 
       self.address = list[3]+","+list[7]+","+list[15]+","+list[19] if list[3] && list[7] && list[15]
     end
     
-    def correct(address)
+    def self.correct(address)
       return if address.nil?
       address.gsub!('\u00c1', "Á")
       address.gsub!('\u00c2', "Â")

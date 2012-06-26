@@ -6323,3 +6323,23 @@ body
   width:200px;
   height:36px;
 }
+
+.forgotpassword
+{
+  float: left;
+  width:280px;
+  height:283px;
+  padding: 10px;
+  border-top:none;
+  margin-right:8px;
+  
+  -moz-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -webkit-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc, 5px -4px 10px #ccc;
+  -khtml-box-shadow: 5px 4px 10px #ccc, -5px 4px 10px #ccc;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#ccc,direction=120,strength=4)"; /* IE8+ */
+  
+  -webkit-border-radius:1em;
+  -moz-border-radius:1em;
+
+  background-color: white; 
+}
