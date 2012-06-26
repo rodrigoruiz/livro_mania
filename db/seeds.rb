@@ -9,7 +9,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create(:email => 'halbuquerquevieira@gmail.com', :password => '123456', :password_confirmation => '123456',
-            :name => 'Heitor Vieira', :cpf => '067.704.724-06', :cep => '50680-170')
+            :name => 'Heitor Vieira', :cpf => '067.704.724-06', :cep => '50710-170')
 
 User.create(:email => 'aderomir@gmail.com', :password => '123456', :password_confirmation => '123456',
             :name => 'Antônio Deromir', :cpf => '044.284.103-52', :cep => '60430-580')
@@ -24,13 +24,13 @@ User.create(:email => 'cassiokendi@gmail.com', :password => 'cassio', :password_
             :name => 'Cassio', :cpf => '383.732.868-61', :cep => '12243-750')
 
 User.create(:email => 'eadrgv@gmail.com', :password => '123456', :password_confirmation => '123456',
-            :name => 'Luis', :cpf => '687.304.407-50', :cep => '13343-750')
+            :name => 'Luis', :cpf => '687.304.407-50', :cep => '12062-150')
 
 User.create(:email => 'ehbf@gmail.com', :password => '123456', :password_confirmation => '123456',
-            :name => 'Mauricio', :cpf => '272.154.362-84', :cep => '50765-171')
+            :name => 'Mauricio', :cpf => '272.154.362-84', :cep => '22460-320')
 
 User.create(:email => 'rstf@gmail.com', :password => '123456', :password_confirmation => '123456',
-            :name => 'Gustavo', :cpf => '877.942.536-40', :cep => '12363-121')
+            :name => 'Gustavo', :cpf => '877.942.536-40', :cep => '88062-200')
 
 
 Message.create(:body => 'Oi, quer me dar aula do Jackson?', :sender_id => 1, :receiver_id => 2)
@@ -61,39 +61,52 @@ User.find(1).books << Book.find(10)
 User.find(1).books << Book.find(7)
 User.find(1).books << Book.find(8)
 
-MyBook.create(:book_id => 9, :user_id => 1, :weight => 4, :additional_information => "Livro em ótimo estado" )
-MyBook.create(:book_id => 4, :user_id => 1, :weight => 5, :additional_information => "Excelente leitura, pequenos cortes" )
-MyBook.create(:book_id => 23, :user_id => 1, :weight => 4, :additional_information => "Livro em ótimo estado" )
-MyBook.create(:book_id => 19, :user_id => 1, :weight => 5, :additional_information => "Excelente leitura, pequenos cortes" )
+MyBook.create(:book_id => 281, :user_id => 1, :weight => 4, :additional_information => "Livro em ótimo estado" )
+MyBook.create(:book_id => 281, :user_id => 2, :weight => 3, :additional_information => "Livro em ótimo estado, apenas com algumas página amassadas" )
+MyBook.create(:book_id => 281, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
+MyBook.create(:book_id => 281, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
+MyBook.create(:book_id => 281, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
+
+
+MyBook.create(:book_id => 8, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
+MyBook.create(:book_id => 8, :user_id => 2, :weight => 3, :additional_information => "Livro em ótimo estado, apenas com algumas página amassadas" )
+MyBook.create(:book_id => 8, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+MyBook.create(:book_id => 8, :user_id => 3, :weight => 5, :additional_information => "Livro em ótimo estado, o que os ricos ensinam a seus filhos sobre dinheiro. o objetivo deste livro é o de partilhar percepções quanto à maneira como uma maior inteligência financeira pode ser empregada para resolver muitos dos problemas comuns da vida. Sem treinamento financeiro, freqüentemente recorremos a fórmulas padronizadas para levar a vida, como trabalhar com afinco, poupar, fazer empréstimos e pagar impostos demais. livro novo. por isso pode levar esse livro." )
 
 
 
-MyBook.create(:book_id => 10, :user_id => 2, :weight => 3, :additional_information => "Livro em ótimo estado, apenas com algumas página amassadas" )
-MyBook.create(:book_id => 34, :user_id => 2, :weight => 3, :additional_information => "Livro em ótimo estado, apenas com algumas página amassadas" )
-MyBook.create(:book_id => 56, :user_id => 2, :weight => 3, :additional_information => "Livro em ótimo estado, apenas com algumas página amassadas" )
+MyBook.create(:book_id => 16, :user_id => 1, :weight => 4, :additional_information => "Livro em ótimo estado" )
+MyBook.create(:book_id => 16, :user_id => 3, :weight => 4, :additional_information => "Livro meio acabadinho, sem capa, e com duas páginas faltnado" )
+MyBook.create(:book_id => 16, :user_id => 3, :weight => 5, :additional_information => "Livro em ótimo estado, o que os ricos ensinam a seus filhos sobre dinheiro. o objetivo deste livro é o de partilhar percepções quanto à maneira como uma maior inteligência financeira pode ser empregada para resolver muitos dos problemas comuns da vida. Sem treinamento financeiro, freqüentemente recorremos a fórmulas padronizadas para levar a vida, como trabalhar com afinco, poupar, fazer empréstimos e pagar impostos demais. livro novo. por isso pode levar esse livro." )
+MyBook.create(:book_id => 16, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+
+
+
+MyBook.create(:book_id => 5, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+MyBook.create(:book_id => 5, :user_id => 8, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+MyBook.create(:book_id => 5, :user_id => 7, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+MyBook.create(:book_id => 5, :user_id => 3, :weight => 4, :additional_information => "Livro meio acabadinho, sem capa, e com duas páginas faltnado" )
+
+
+
+MyBook.create(:book_id => 115, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
+MyBook.create(:book_id => 115, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
+
+
+MyBook.create(:book_id => 17, :user_id => 1, :weight => 5, :additional_information => "Excelente leitura, egseh pequenos cortes" )
+MyBook.create(:book_id => 17, :user_id => 7, :weight => 5, :additional_information => "Excelente leitura,  weth seh pequenos cortes" )
+MyBook.create(:book_id => 17, :user_id => 3, :weight => 5, :additional_information => "Excelente leitura, eth  pequenos cortes" )
+MyBook.create(:book_id => 17, :user_id => 5, :weight => 5, :additional_information => "Excelente heh leitura,  aerg pequenos cortes" )
+
+
+MyBook.create(:book_id => 32, :user_id => 2, :weight => 3, :additional_information => "Livro em ótimo estado, apenas com algumas página amassadas" )
 MyBook.create(:book_id => 32, :user_id => 2, :weight => 3, :additional_information => "Livro em ótimo estado, apenas com algumas página amassadas" )
 
-MyBook.create(:book_id => 8, :user_id => 3, :weight => 4, :additional_information => "Livro meio acabadinho, sem capa, e com duas páginas faltnado" )
-MyBook.create(:book_id => 4, :user_id => 3, :weight => 5, :additional_information => "Livro em ótimo estado, o que os ricos ensinam a seus filhos sobre dinheiro. o objetivo deste livro é o de partilhar percepções quanto à maneira como uma maior inteligência financeira pode ser empregada para resolver muitos dos problemas comuns da vida. Sem treinamento financeiro, freqüentemente recorremos a fórmulas padronizadas para levar a vida, como trabalhar com afinco, poupar, fazer empréstimos e pagar impostos demais. livro novo. por isso pode levar esse livro." )
-MyBook.create(:book_id => 7, :user_id => 3, :weight => 4, :additional_information => "Livro meio acabadinho, sem capa, e com duas páginas faltnado" )
-MyBook.create(:book_id => 49, :user_id => 3, :weight => 5, :additional_information => "Livro em ótimo estado, o que os ricos ensinam a seus filhos sobre dinheiro. o objetivo deste livro é o de partilhar percepções quanto à maneira como uma maior inteligência financeira pode ser empregada para resolver muitos dos problemas comuns da vida. Sem treinamento financeiro, freqüentemente recorremos a fórmulas padronizadas para levar a vida, como trabalhar com afinco, poupar, fazer empréstimos e pagar impostos demais. livro novo. por isso pode levar esse livro." )
-MyBook.create(:book_id => 68, :user_id => 3, :weight => 4, :additional_information => "Livro meio acabadinho, sem capa, e com duas páginas faltnado" )
-MyBook.create(:book_id => 76, :user_id => 3, :weight => 5, :additional_information => "Livro em ótimo estado, o que os ricos ensinam a seus filhos sobre dinheiro. o objetivo deste livro é o de partilhar percepções quanto à maneira como uma maior inteligência financeira pode ser empregada para resolver muitos dos problemas comuns da vida. Sem treinamento financeiro, freqüentemente recorremos a fórmulas padronizadas para levar a vida, como trabalhar com afinco, poupar, fazer empréstimos e pagar impostos demais. livro novo. por isso pode levar esse livro." )
 
-MyBook.create(:book_id => 76, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
-MyBook.create(:book_id => 48, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
-MyBook.create(:book_id => 94, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
-MyBook.create(:book_id => 78, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
-MyBook.create(:book_id => 87, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
-MyBook.create(:book_id => 234, :user_id => 4, :weight => 3, :additional_information => "siaugehisuzdkvbeslhbadfb dafb df sd vds " )
-
-MyBook.create(:book_id => 23, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
-MyBook.create(:book_id => 56, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
-MyBook.create(:book_id => 76, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
-MyBook.create(:book_id => 234, :user_id => 5, :weight => 3, :additional_information => "df sg sgf gf vfg sgfbfgn shethrdtjh srtjrjtrsj rttrsj srthrt jmn" )
+MyBook.create(:book_id => 43, :user_id => 8, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+MyBook.create(:book_id => 43, :user_id => 7, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
 
 
-MyBook.create(:book_id => 34, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
-MyBook.create(:book_id => 37, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
-MyBook.create(:book_id => 43, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
-MyBook.create(:book_id => 153, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+
+MyBook.create(:book_id => 266, :user_id => 6, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
+MyBook.create(:book_id => 266, :user_id => 7, :weight => 3, :additional_information => "rtj rstjrtdfhngfhrtxfgh steh tsrehjtrdghg rtjrjrtg trj srtjgxt r" )
