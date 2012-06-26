@@ -4,7 +4,7 @@ class CreateMyBooks < ActiveRecord::Migration
   	  t.integer :book_id
   	  t.integer :user_id
   	  t.float   :weight
-  	  t.string  :additional_information
+  	  t.text :additional_information
   	  t.has_attached_file :photo
 	    
       t.timestamps
