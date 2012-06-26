@@ -6,6 +6,7 @@ class MyBooksController < ApplicationController
   def find
     @book = Book.find_by_title(params[:search_string])
     if @book
+
       @my_books = MyBook.find_all_by_book_id(@book.id)
       
       @my_books.delete_if { |my_book| my_book.owner == current_user }
